@@ -1,0 +1,416 @@
+The Claude API follows a request–response model. Each request to the Claude Messages API includes:
+
+{
+  "model": "claude-sonnet-4-6",
+  "max_tokens": 1024,
+  "system": "You are a helpful assistant.",
+  "messages": [
+    {"role": "user", "content": "Hi!"},
+    {"role": "assistant", "content": "Hello!"},
+    {"role": "user", "content": "How are you?"}
+  ],
+  "tools": [...],
+  "tool_choice": {"type": "auto"}
+}
+
+
+tool_use is a mechanism that allows Claude to call external functions. The model does not run code directly—it generates a structured tool call request; your code executes it and returns the result.
+
+Each tool is defined using a JSON schema:
+
+{
+  "name": "get_customer",
+  "description": "Finds a customer by email or ID. Returns the customer profile, including name, email, order history, and account status. Use this tool BEFORE lookup_order to verify the customer's identity. Accepts an email (format: user@domain.com) or a numeric customer_id.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "email": {"type": "string", "description": "Customer email"},
+      "customer_id": {"type": "integer", "description": "Numeric customer ID"}
+    },
+    "required": []
+  }
+}
+
+1. Send a request to Claude with tools
+2. Receive a response
+3. Check stop_reason:
+   - "tool_use" -> execute the tool, append the result to history, go back to step 1
+   - "end_turn" -> the task is complete, show the result to the user
+4. Repeat until completion
+
+AgentDefinition is the agent configuration object in the Claude Agent SDK:
+
+agent = AgentDefinition(
+    name="customer_support",
+    description="Handles customer requests for returns and order issues",
+    system_prompt="You are a customer support agent...",
+    allowed_tools=["get_customer", "lookup_order", "process_refund", "escalate_to_human"],
+    # For a coordinator:
+    # allowed_tools=["Task", "get_customer", ...]
+)
+
+A multi-agent architecture is typically built as a hub-and-spoke topology:
+
+         Coordinator
+        /     |      \
+   Subagent1  Subagent2  Subagent3
+    (search)   (analysis)   (synthesis)
+	
+Subagents are spawned via the Task tool:
+
+# The coordinator's allowedTools must include "Task"
+coordinator_agent = AgentDefinition(
+    allowed_tools=["Task", "get_customer"]
+)
+
+Outgoing-call interception hook blocks actions that violate policy:
+
+# Example: block refunds above $500
+@hook("PreToolUse")
+def enforce_refund_limit(tool_call):
+    if tool_call.name == "process_refund" and tool_call.args.amount > 500:
+        return redirect_to_escalation(tool_call)
+Rule: when failure has financial, legal, or safety consequences—use hooks, not prompts.
+
+The Model Context Protocol (MCP) is an open protocol for connecting external systems to Claude. MCP defines three primary resource types:
+Tools — functions the agent can call to perform actions (CRUD operations, API calls, command execution)
+Resources — data the agent can read for context (documentation, database schemas, content catalogs)
+Prompts — predefined prompt templates for common tasks
+
+An MCP server is a process that implements the MCP protocol and provides tools/resources. When you connect to an MCP server:
+All tools are discovered automatically
+Tools from all connected servers are available at once
+Tool descriptions determine how the model will use them
+
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "jira": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-jira"],
+      "env": {
+        "JIRA_TOKEN": "${JIRA_TOKEN}"
+      }
+    }
+  }
+}
+
+Key points:
+
+.mcp.json is stored at the project root and managed in version control
+Environment variables (${GITHUB_TOKEN}) are used for secrets—tokens themselves are not committed
+Available to all project contributors
+User configuration (~/.claude.json) — for personal/experimental servers:
+
+Stored in the user's home directory
+Not shared via version control
+Suitable for personal experiments and testing
+Choosing servers:
+
+For standard integrations (Jira, GitHub, Slack), prefer existing community MCP servers
+Build your own servers only for unique, team-specific workflows
+
+Key points:
+
+.mcp.json is stored at the project root and managed in version control
+Environment variables (${GITHUB_TOKEN}) are used for secrets—tokens themselves are not committed
+Available to all project contributors
+User configuration (~/.claude.json) — for personal/experimental servers:
+
+Stored in the user's home directory
+Not shared via version control
+Suitable for personal experiments and testing
+Choosing servers:
+
+For standard integrations (Jira, GitHub, Slack), prefer existing community MCP servers
+Build your own servers only for unique, team-specific workflows
+
+In your project it would look like this:
+
+/Users/sraffal/
+├── .claude/
+│   └── CLAUDE.md                  ← user level
+└── SFDC/Certification/Claude-Architect-Foundational/
+    ├── CLAUDE.md                  ← project level (or .claude/CLAUDE.md)
+    ├── get_booking_agent.py
+    └── support_agent/
+        ├── CLAUDE.md              ← directory level
+        └── loop.py
+
+A few practical notes:
+- The file name matters. It must be exactly CLAUDE.md, all caps with a .md extension.
+- Shortcut: running /init in Claude Code creates a starter project-level CLAUDE.md for you.
+- Check what's loaded: run /memory to see which files are active and open them for editing.
+- Version control: your folder isn't a git repo yet. Once it is, commit the project and directory files. The user file lives outside the repo, which is why it never gets shared.
+
+Common mistake: a new team member does not receive project instructions because they were placed in ~/.claude/CLAUDE.md (user-level) instead of .claude/CLAUDE.md (project-level).
+
+Claude-Architect-Foundational/
+├── CLAUDE.md                        ← now just the two @ import lines
+└── standards/
+    ├── coding-style.md              ← Python and anthropic SDK, default model, fictional data only
+    └── testing-requirements.md      ← run a syntax check after each .py edit
+
+# Project CLAUDE.md
+
+Coding standards are described in @./standards/coding-style.md
+Test requirements are in @./standards/testing-requirements.md
+Project overview is in @README.md and dependencies are in @package.json
+
+CLAUDE.md file:
+# Project: Claude Architect Foundations study code
+
+Coding standards are described in @./standards/coding-style.md
+Test requirements are in @./standards/testing-requirements.md
+
+ Maximum import nesting depth is 5 - what does this mean
+
+It means imports can chain through at most 5 levels: a file imported by your CLAUDE.md can import another file, and so on, up to 5 times. Anything deeper doesn't load.
+
+Here's an example chain starting from your project:
+
+CLAUDE.md
+ └─ @standards/coding-style.md          ← level 1
+     └─ @standards/python.md             ← level 2
+         └─ @standards/naming.md         ← level 3
+             └─ @standards/variables.md  ← level 4
+                 └─ @standards/consts.md ← level 5 ✅ loads
+                     └─ @standards/x.md  ← level 6 ❌ ignored
+
+- Depth means a chain, not a count. Your CLAUDE.md can import 20 files directly, and they're all level 1. The limit only applies to imports inside imports.
+- Why it exists: it stops runaway or circular imports, such as A importing B and B importing A, and keeps context from growing without bound.
+- In practice: if a rule seems to be ignored and it sits deep in an import chain, run /memory to check whether it loaded. Then flatten the chain by importing that file straight from CLAUDE.md.
+
+Your current setup is only one level deep: CLAUDE.md imports the two standards/ files directly.
+
+
+When to use a skill vs CLAUDE.md:
+
+Skill — on-demand invocation for a specific task (review, analysis, generation)
+CLAUDE.md — always-loaded general standards and conventions
+
+Combined approach:
+
+Planning mode for investigation and design
+User approves the plan
+Direct execution to implement the approved plan
+
+┌─────────────────┬──────────────────────────────────────────────────────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                 │                                   Fork                                   │                                                 Subagent                                                  │
+├─────────────────┼──────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Context at      │ The full history of the parent session                                   │ A fresh, empty context plus the task prompt from the coordinator                                          │
+│ start           │                                                                          │                                                                                                           │
+├─────────────────┼──────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Who starts it   │ You, the developer, with --fork-session or fork_session=True             │ The main agent itself, through the Task tool, when it decides to delegate                                 │
+├─────────────────┼──────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Relationship    │ Peers. Each fork is an independent session, and the original is          │ Hub and spoke. The coordinator delegates, and the subagent works and returns a result.                    │
+│                 │ untouched.                                                               │                                                                                                           │
+├─────────────────┼──────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Results         │ Stay in the fork. Nothing flows back automatically.                      │ A summary returns to the coordinator's context                                                            │
+├─────────────────┼──────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Lifetime        │ Long-lived and can be resumed later                                      │ Short-lived and ends when its task is done                                                                │
+├─────────────────┼──────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Purpose         │ Explore alternative approaches from a shared starting point              │ Split up work and keep the main context clean                                                             │
+├─────────────────┼──────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Example         │ Investigate the codebase, then fork into Redux and Context API branches  │ The coordinator sends three subagents to research three sources in parallel, then combines what they      │
+│                 │                                                                          │ return                                                                                                    │
+└─────────────────┴──────────────────────────────────────────────────────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Exam angles:
+- Subagents don't inherit the parent's context. Anything the subagent needs must go into its task prompt. A frequent wrong answer assumes the subagent "already knows" earlier findings.
+- Context protection: subagents keep verbose work, like reading many files, out of the coordinator's context. Only the summary comes back. This ties to Domain 5, Context Management.
+- Choosing between them: "compare alternatives from the same baseline" points to fork. "Parallelize or isolate subtasks within one job" points to subagents.
+
+Explicit Criteria vs Vague Instructions:
+CRITICAL: Runtime failure for users
+  Example: NullPointerException while processing a payment
+
+HIGH: Security vulnerability
+  Example: SQL injection, XSS, missing authorization checks
+
+MEDIUM: Logic bug without immediate impact
+  Example: Wrong sorting, off-by-one error
+
+LOW: Code quality
+  Example: Duplication, suboptimal algorithm for small data
+  
+
+Prompt chaining breaks a complex task into a sequence of focused steps:
+
+Step 1: Analyze auth.ts (local issues only)
+       -> Output: list of issues in auth.ts
+
+Step 2: Analyze database.ts (local issues only)
+       -> Output: list of issues in database.ts
+
+Step 3: Integration pass (cross-file dependencies)
+       -> Output: issues at module boundaries
+Why this matters:
+
+Avoids attention dilution—when the model receives too many files at once, it may miss bugs in some files while providing shallow commentary on others
+Ensures consistent analysis quality per file
+Allows separate analysis of cross-file interactions
+
+When to use prompt chaining vs dynamic decomposition:
+
+Prompt chaining — predictable, repeatable tasks (code review, file migrations)
+Dynamic decomposition — open-ended investigations where subtasks become clear only during execution
+
+When extracted data fails validation:
+
+Step 1: Extract data from the document
+Step 2: Validate (Pydantic, JSON Schema, business rules)
+Step 3: If there's an error—retry with context:
+  - The original document
+  - The previous (incorrect) extraction
+  - The specific error: "Field 'total' = 150, but sum(line_items) = 145. Re-check values."
+
+Pydantic as a validation tool: Pydantic is a Python library for schema-based data validation. For the exam, the key points are:
+
+Structural validation: types, requiredness, enum constraints checked in code after receiving JSON from Claude
+Semantic validation: custom validators enforce business logic (sum of items equals total; start_date < end_date)
+Validate–retry loops: on Pydantic validation failure, construct an error message and re-prompt Claude with the error context
+JSON Schema generation: Pydantic models can generate JSON Schema for tool_use, providing a single source of truth
+
+{
+  "custom_id": "doc-invoice-2024-001",
+  "params": {
+    "model": "claude-sonnet-4-6",
+    "max_tokens": 1024,
+    "messages": [{"role": "user", "content": "Extract data from: ..."}]
+  }
+}
+
+Handling Failures in Batches
+  Submit a batch of 100 documents
+  95 succeed; 5 fail (context limit exceeded)
+  Identify failures by custom_id
+  Modify strategy (e.g., split long documents into chunks)
+  Re-submit only the 5 failed documents
+  
+
+A short sketch of steps 3 and 5 in Python:
+
+failed = []
+for r in client.messages.batches.results(batch_id):
+    if r.result.type == "succeeded":
+        save(r.custom_id, r.result.message.content)
+    else:
+        failed.append(r.custom_id)
+
+retry_requests = [
+    {"custom_id": f"{doc_id}-part{i}", "params": build_params(chunk)}
+    for doc_id in failed
+    for i, chunk in enumerate(split_into_chunks(docs[doc_id]))
+]
+client.messages.batches.create(requests=retry_requests)
+
+The context limit applies to each request separately, not to the whole batch. If one document plus your prompt plus the room reserved for output (max_tokens) is bigger than the model's context window, that request can never fit. Splitting the document creates several smaller requests, and each one fits within its own window.
+
+Before:  1 request = prompt + 1.3M-token document   → ❌ over the 1M limit
+
+After:   request A = prompt + chunk 1 (450K)        → ✅
+         request B = prompt + chunk 2 (450K)        → ✅
+         request C = prompt + chunk 3 (400K)        → ✅
+
+7.5 SLA Planning
+If you need a result in 30 hours and the Batch API can take up to 24 hours:
+
+Submission window: 30 - 24 = 6 hours
+Batches must be submitted no later than 24 hours before the deadline
+For frequent submissions, split into 4-hour windows
+
+The planning rule is to work backwards from the deadline. The Batch API promises results within 24 hours, so a batch is only safe if it's submitted at least 24 hours before you need the results.
+
+Using a deadline 30 hours from now:
+
+Now (hour 0)            Hour 6                              Hour 30
+|---- submit window ----|------- worst-case processing -----|
+       6 hours                     24 hours              DEADLINE
+
+- A batch submitted at hour 0 finishes by hour 24 at the latest, which is safe.
+- A batch submitted at hour 6 finishes by hour 30 at the latest, which just makes it.
+- A batch submitted at hour 7 might finish at hour 31, which misses the deadline.
+
+Prompt Chaining
+Document -> Metadata extraction -> Data extraction -> Validation -> Enrichment -> Final output
+That's a fixed sequential pipeline, also called prompt chaining. It's covered in Chapter 8.1 of the guide and in exam Domains 1 and 4. Each stage is a separate, focused step, and its output becomes the next stage's input.
+
+┌─────────────────────┬────────────────────────────────────────────────────────────────────────────────┬────────────────────────────────────────────────────┐
+│        Stage        │                                    Purpose                                     │                 Example (invoice)                  │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────┤
+│ Metadata extraction │ Work out what the document is                                                  │ Type = invoice, vendor = Acme, date, language      │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────┤
+│ Data extraction     │ Pull structured fields, using the metadata to choose the schema                │ Line items, totals, tax, PO number                 │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────┤
+│ Validation          │ Check the extracted data: schema-valid, totals add up, required fields present │ Do the line items sum to the total?                │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────┤
+│ Enrichment          │ Add data from outside the document                                             │ Look up the vendor ID in the CRM, convert currency │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────┤
+│ Final output        │ Produce clean, structured JSON for downstream systems                          │ A record ready to write to the database            │
+└─────────────────────┴────────────────────────────────────────────────────────────────────────────────┴────────────────────────────────────────────────────┘
+
+Why split it up instead of using one large prompt?
+- Focus: each prompt does one job, which makes it more accurate and easier to tune.
+- Debugging: when output is wrong, you can see which stage caused it.
+- Mixed tools: some stages don't need an LLM at all. Validation can be plain code, and enrichment can be an API call.
+- Cost: a cheaper model or lower effort can handle the simpler stages.
+
+The validation stage carries the most weight on the exam:
+- Syntax errors (bad JSON, wrong types): prevent them with structured outputs or strict: true tool schemas.
+- Semantic errors (valid JSON with wrong values, such as totals that don't add up): only validation catches these.
+- When validation fails, retry with feedback: send the specific error back to the extraction stage ("Line items sum to 950 but total says 1000; re-check"), not just "try again" (Chapter 6.5).
+- After N failed retries, escalate to human review instead of passing bad data along (Chapter 9).
+
+Fixed versus adaptive:
+
+┌─────────────────────────────────────────────────────────────┬────────────────────────────────────────────────────────────────┐
+│                  Use a fixed pipeline when                  │         Use adaptive decomposition (Chapter 8.2) when          │
+├─────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────────────────┤
+│ The steps are known in advance and the same for every input │ The steps depend on what's discovered along the way            │
+├─────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────────────────┤
+│ Example: invoice processing, form extraction                │ Example: open-ended research, debugging an unfamiliar codebase │
+├─────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────────────────┤
+│ Predictable, testable, cheaper                              │ Flexible, but less predictable                                 │
+└─────────────────────────────────────────────────────────────┴────────────────────────────────────────────────────────────────┘
+
+Exam rule of thumb: a known, repeatable process calls for a fixed pipeline in code. Reach for an agent only when the path can't be specified ahead of time.
+
+
+Separate context layer: In multi-agent systems, each subagent operates within a limited context budget—it receives only the information required for its task. The coordinator acts as a separate context layer: it aggregates subagent outputs, stores global state, and allocates context. This prevents “context leakage,” where one agent consumes the window with information irrelevant to others.
+
+12.4 Render by Content Type
+Don’t force everything into one format:
+
+Financial data -> tables
+News and analysis -> prose
+Technical findings -> structured lists
+Time series -> chronological ordering
+
+
+1. Context & Memory Files
+
+• CLAUDE.md: The primary project playbook. It automatically loads at the start of every session, providing Claude with architecture notes, tech stack details, build commands, and coding conventions. It can exist at the global level (~/.claude/CLAUDE.md), project root (<repo>/CLAUDE.md), or nested in subdirectories.
+• CLAUDE.local.md: A local override file for personal, machine-specific instructions or preferences that you keep out of Git.
+• AGENTS.md: An alternative repository instructions file that Claude can read in place of CLAUDE.md.
+• Auto-generated Memory: Files like MEMORY.md or session tracking files in ~/.claude/ where Claude automatically logs notes and preferences based on your past corrections.
+
+2. Policy & Permission Files
+
+• settings.json: Controls team-wide rules, model selection, permitted tools, and execution hooks.
+• settings.local.json: Overrides settings.json on a per-developer basis.
+• ~/.claude.json: A global state and configuration file stored in your home directory.
+
+3. Capability & Automation Files
+
+• .mcp.json: Connects Claude to external integrations and tools via the Model Context Protocol (such as GitHub, Jira, Slack, or databases).
+• rules/ directory: Scoped rule files (e.g., code-style.md, testing.md) that apply specific conventions to matching file paths.
+• commands/ directory: Custom slash commands (.claude/commands/*.md) that you invoke explicitly (e.g., /project:review).
+• skills/ directory: Packaged capability folders (.claude/skills/<name>/SKILL.md) that Claude matches and triggers automatically depending on the task.
+• agents/ directory: Subagent definitions that Claude can delegate specialized sub-tasks to.

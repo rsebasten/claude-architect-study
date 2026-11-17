@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "bookings": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["mcp_servers/bookings_server.py"],
+      "env": {
+        "BOOKINGS_ENV": "${BOOKINGS_ENV:-demo}"
+      }
+    }
+  }
+}

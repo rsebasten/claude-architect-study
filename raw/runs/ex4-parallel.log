@@ -1,0 +1,126 @@
+   5.7s coordinator -> Task(web_researcher)
+   7.6s   web_researcher -> search_web({"query": "Lumen Bay composting participation"})
+   7.8s coordinator -> Task(doc_analyst)
+   8.0s   web_researcher -> search_web({"query": "Lumen Bay composting landfill diversion"})
+   8.4s   web_researcher -> search_web({"query": "Lumen Bay composting cost per household"})
+   8.7s   web_researcher -> search_web({"query": "Lumen Bay composting resident satisfaction"})
+   9.9s   doc_analyst -> list_documents({})
+  12.1s   doc_analyst -> read_document({"doc_id": "council-waste-report-2025"})
+  12.3s   web_researcher -> search_web({"query": "Lumen Bay compost complaints survey"})
+  12.5s   doc_analyst -> read_document({"doc_id": "resident-survey-summary"})
+  12.7s   doc_analyst -> read_document({"doc_id": "hauler-contract-memo"})
+  25.1s coordinator <- web_researcher done: '  <tools-used-before-summary>mcp__research__search_web</tools-used-before-summary>\n  \n[Sub'
+  27.2s coordinator <- doc_analyst done: '  <tools-used-before-summary>mcp__research__list_documents, mcp__research__read_document</'
+  49.6s coordinator -> Task(synthesizer)
+  83.5s coordinator <- synthesizer done: '[Subagent hand-back] The text below is the final report of a subagent this session delegat'
+
+result: subtype=success stop_reason=end_turn turns=4 cost=$0.3933 wall=103.9s
+
+======================================================================
+# Lumen Bay Curbside Composting Program: Performance Report
+
+**Scope:** participation, landfill diversion, cost per household and resident satisfaction.
+**Inputs:** web_researcher (status "partial", coverage_gap error) and doc_analyst (status "ok", with gaps noted in its coverage note).
+
+On conflict handling: the reporting rules for this synthesis do not allow picking a winner or averaging values. The conflicts below are therefore "resolved" by explaining what each figure measures (method, date and scope), not by choosing one figure. Each figure should be read only as the measure it actually is.
+
+---
+
+## Established
+
+Each figure below is stated by two sources. However, the two sources are probably not fully independent. The Gazette says it is citing "city sign-up figures", and it was published after the City Council report. It is likely reporting the Council's own data rather than measuring anything separately. These figures are well corroborated as the official numbers, but they have not been independently verified.
+
+| Figure | Sources |
+|---|---|
+| **41% of households registered (signed up)** for curbside composting in 2025, as of December 2025. This counts enrollment, not bin use. | [Lumen Bay Gazette](https://lumenbay-gazette.example/2026/03/composting-milestone, 2026-03-10); [Lumen Bay City Council - Annual Waste Report 2025](doc://council-waste-report-2025, 2026-01-15) |
+| **About 12,000 tonnes of food waste diverted from landfill in 2025.** The Gazette says "roughly" and names the Harrow Point landfill. | [Lumen Bay Gazette](https://lumenbay-gazette.example/2026/03/composting-milestone, 2026-03-10); [Lumen Bay City Council - Annual Waste Report 2025](doc://council-waste-report-2025, 2026-01-15) |
+
+---
+
+## Contested
+
+### 1. Participation: 41% registered vs 34% active use
+
+| Value | Source | URL | Publication date |
+|---|---|---|---|
+| 41% of households (sign-ups, 2025 / as of Dec 2025) | Lumen Bay Gazette | https://lumenbay-gazette.example/2026/03/composting-milestone | 2026-03-10 |
+| 41% of households (registered sign-ups as of Dec 2025) | Lumen Bay City Council - Annual Waste Report 2025 | doc://council-waste-report-2025 | 2026-01-15 |
+| 34% of households actively used bins at least twice a month in 2025 (door-to-door survey of 1,200 households) | Coastal Sustainability Institute | https://coastal-sustainability.example/reports/lumen-bay-2025 | 2026-02-01 |
+
+**Likely reason: different methods and scope.**
+- The 41% figure is an administrative count of enrollment.
+- The 34% figure is a sample survey of behaviour, using a defined threshold of at least two bin set-outs per month.
+- The Institute states that "sign-up counts overstate active use because many registered households never set a bin out."
+
+The two figures measure different things and both can be accurate. Report 41% as enrollment and 34% as active use. Neither should stand in for "participation" without its qualifier. The survey's sampling method and margin of error beyond n=1,200 are not given.
+
+### 2. Cost per household: $18 vs $21 vs $24
+
+| Value | Source | URL | Publication date |
+|---|---|---|---|
+| About $18 per household per year (unofficial blog estimate from the 2024 municipal budget) | GreenLedger (blog) | https://greenledger-blog.example/posts/lumen-bay-compost-costs | 2025-11-05 |
+| $21 per household per year (official 2025 budget; up from 2024 because of a new collection route) | Lumen Bay City Council - Annual Waste Report 2025 | doc://council-waste-report-2025 | 2026-01-15 |
+| $24 per household per year (projected, after a second weekly pickup is added from July 2026 under the renewed hauler contract) | Memo: Organics Hauler Contract Renewal | doc://hauler-contract-memo | 2026-03-02 |
+
+**Likely reason: different periods and different source types.**
+- **$18** is a third-party blog's derivation from 2024 budget data. It is unofficial, and its calculation method is not shown.
+- **$21** is the official 2025 budgeted figure.
+- **$24** is a forward projection for the period after the service change in July 2026. It is not an actual cost.
+
+The three values describe a likely upward path (2024, then 2025, then from July 2026). The Council report confirms that cost rose from 2024 to 2025, which fits a lower 2024 figure. However, the Council does not publish its 2024 number, so the $18 estimate cannot be checked against an official source. None of these values should be treated as "the" current cost without stating its period and basis. All three are budget or projection figures. No actual spending or outturn figure was found.
+
+---
+
+## Single-source
+
+| Figure | Source |
+|---|---|
+| **72% of composting participants** rated the program "satisfied" or "very satisfied". | [Resident Services Survey - Summary of Results](doc://resident-survey-summary, 2026-02-20) |
+| **22% of respondents** cited summer bin odour as their most common complaint. | [Resident Services Survey - Summary of Results](doc://resident-survey-summary, 2026-02-20) |
+| A second weekly pickup is added from **July 2026** under the hauler contract renewal. This is the driver of the $24 projection. | [Memo: Organics Hauler Contract Renewal](doc://hauler-contract-memo, 2026-03-02) |
+| The 2025 cost increase was attributed to a **new collection route**. | [Lumen Bay City Council - Annual Waste Report 2025](doc://council-waste-report-2025, 2026-01-15) |
+| **1,200 households** were surveyed door-to-door. This is the basis of the 34% active-use figure. | [Coastal Sustainability Institute](https://coastal-sustainability.example/reports/lumen-bay-2025, 2026-02-01) |
+
+The 34%, $18, $21 and $24 figures each come from a single source. They are covered under Contested above.
+
+**Caveats on the satisfaction figures:**
+- The satisfaction evidence comes only from this one internal survey. The survey's sample size and method are not stated.
+- The 72% applies to "composting participants", not to all residents, so it is not a citywide satisfaction rate.
+- It is not stated whether "participants" means registered households (41%) or active users.
+- It is unclear whether the 22% odour figure is a share of participants or of all survey respondents.
+
+---
+
+## Coverage gaps
+
+**web_researcher: status "partial", error `coverage_gap`, isRetryable: false**
+- It ran five searches: "Lumen Bay composting participation", "Lumen Bay composting landfill diversion", "Lumen Bay composting cost per household", "Lumen Bay composting resident satisfaction" and "Lumen Bay compost complaints survey".
+- Every search returned the same three sources, or a subset of them. There were no tool errors.
+- It found **no resident satisfaction evidence on the web**: no satisfaction survey, complaint data or resident feedback. The Coastal Sustainability Institute survey measured bin use, not satisfaction.
+
+**doc_analyst: status "ok", error null, with gaps stated in its coverage note**
+- It read all three internal documents in full.
+- It found at least one figure per sub-topic, but several requested details are missing (listed below).
+
+**Missing across both agents:**
+- **Participation:** no enrolled household count (absolute number), no trend over several years, and no official set-out or active-use rate. The only active-use figure is the Institute's survey.
+- **Landfill diversion:** no diversion rate, no share of total waste stream, no baseline, and no comparison with previous years. The tonnage alone cannot show whether performance is improving.
+- **Cost per household:** no total program budget, no official 2024 per-household figure, no actual spending (only budgets and projections), and no comparison with other cities.
+- **Resident satisfaction:** only one internal source exists. Its sample size and method are not stated, its participant definition is unclear, the denominator for the 22% figure is unclear, there is no data on non-participants, there is no trend over time, and there is no independent or web-based corroboration.
+
+---
+
+**Bottom line:** By its own official figures, the program enrolled 41% of households and diverted about 12,000 tonnes in 2025. Independent survey evidence suggests active use is lower, at 34%. Per-household cost is rising: about $18 (unofficial, 2024 basis), then $21 (2025 budget), then a projected $24 from July 2026. Satisfaction among participants appears fairly high at 72%, with summer odour as the main complaint. However, this rests on a single internal survey of unknown method. Without diversion rates, baselines or comparisons with other cities, the evidence cannot show whether the program is performing well relative to targets or peers.
+======================================================================
+
+Checks:
+  web_researcher output              status=partial findings=4 schema_ok=True error=coverage_gap
+  web_researcher time                5.7s -> 25.1s
+  doc_analyst output                 status=ok findings=6 schema_ok=True
+  doc_analyst time                   7.8s -> 27.2s
+  Task calls per coordinator msg     [2, 1]  (parallel)
+  Context passed in Task prompts     web_researcher=yes(604ch), doc_analyst=yes(656ch), synthesizer=yes(8616ch)
+  Report URLs traced to findings     all
+  Conflict kept (41% and 34%)        True
+  Conflict kept ($18 and $21)        True
+  Established/Contested split        True

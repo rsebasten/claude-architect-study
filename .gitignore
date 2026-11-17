@@ -1,0 +1,7 @@
+# Exam material and third-party content: never publish
+*.pdf
+raw/community-guide-en.md
+# Personal / machine files
+.claude/settings.local.json
+__pycache__/
+.DS_Store
