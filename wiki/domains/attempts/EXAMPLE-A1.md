@@ -19,6 +19,7 @@
 | 6 | `EXAMPLE-Q06` | 6 | 2036 | A | A | Correct |
 | 7 | `EXAMPLE-Q07` | 7 | 2051 | B | B | Correct |
 | 8 | `EXAMPLE-Q08` | 8 | 2066 | A | A | Correct |
+| 9 | `EXAMPLE-Q09` | 9 | 2081 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -72,6 +73,13 @@
 ### Question 8 — Feedback
 
 **Source explanation (Why A):** Structured error context gives the coordinator what it needs to decide whether to retry with a modified query, try an alternative approach, or continue with partial results. B hides context behind a generic status. C masks failure as success. D aborts the entire workflow unnecessarily.
+
+- Answer submitted: A
+- Result: Correct
+
+### Question 9 — Feedback
+
+**Source explanation (Why A):** This applies the principle of least privilege: the synthesis agent gets exactly what it needs for the 85% common case (simple fact checks) while preserving the coordinator-mediated path for complex investigations. B introduces blocking dependencies (later synthesis steps may depend on earlier verified facts). C breaks separation of responsibilities. D relies on speculative caching that cannot reliably predict needs.
 
 - Answer submitted: A
 - Result: Correct
