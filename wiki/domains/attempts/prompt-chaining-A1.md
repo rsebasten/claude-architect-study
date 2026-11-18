@@ -4,9 +4,9 @@
 - Started: 2026-11-18
 - Status: in progress
 - Questions: 7
-- Submitted: 5
-- First-attempt score: 5/5
-- Checkpoint: Question 6
+- Submitted: 6
+- First-attempt score: 6/6
+- Checkpoint: Question 7
 
 ## Responses
 
@@ -50,6 +50,14 @@
 - Remediation / escalation: No remediation escalation required. Reinforce the distinction between fixed, reproducible pipelines and adaptive decomposition for unknown or changing task scope.
 - Weakness observed: None from this response.
 
+### Question 6 — Cross-file integration
+- Selected answer: **C** — Identify cross-file relationships and integration issues, such as inconsistent types or circular dependencies.
+- Result: **Correct**
+- First attempt: Yes
+- Explanation: The integration pass evaluates how the individually reviewed files work together. It looks for problems that local file-by-file analysis may miss, including incompatible interfaces, inconsistent types, and circular dependencies.
+- Remediation / escalation: No remediation escalation required. Reinforce the two-level review: local correctness per file, followed by system-level consistency across files.
+- Weakness observed: None from this response.
+
 ## Weaknesses
 
-No weaknesses identified from Q1–Q5. Update this section after each incorrect answer or request for deeper explanation.
+No weaknesses identified from Q1–Q6. Update this section after each incorrect answer or request for deeper explanation.
