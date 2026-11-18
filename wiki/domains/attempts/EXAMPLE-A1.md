@@ -20,6 +20,7 @@
 | 7 | `EXAMPLE-Q07` | 7 | 2051 | B | B | Correct |
 | 8 | `EXAMPLE-Q08` | 8 | 2066 | A | A | Correct |
 | 9 | `EXAMPLE-Q09` | 9 | 2081 | A | A | Correct |
+| 10 | `EXAMPLE-Q10` | 10 | 2096 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -80,6 +81,13 @@
 ### Question 9 — Feedback
 
 **Source explanation (Why A):** This applies the principle of least privilege: the synthesis agent gets exactly what it needs for the 85% common case (simple fact checks) while preserving the coordinator-mediated path for complex investigations. B introduces blocking dependencies (later synthesis steps may depend on earlier verified facts). C breaks separation of responsibilities. D relies on speculative caching that cannot reliably predict needs.
+
+- Answer submitted: A
+- Result: Correct
+
+### Question 10 — Feedback
+
+**Source explanation (Why A):** `-p` (or `--print`) is the documented way to run Claude Code in non-interactive mode. It processes the prompt, prints to stdout, and exits. The other options are either non-existent features or Unix workarounds.
 
 - Answer submitted: A
 - Result: Correct
