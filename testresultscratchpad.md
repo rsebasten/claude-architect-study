@@ -1,21 +1,29 @@
-# Test Result Scratchpad
+# testresultscratchpad
 
-Purpose: persistent answer history and targeted follow-up training for the Claude Certified Architect study quiz.
+Persistent record for Prompt Chaining quiz answers, attempts, and training weaknesses.
 
-## Quiz configuration
-- Scope: D3 — Claude Code Configuration & Workflows (20% exam weight)
-- Source: https://github.com/rsebasten/claude-architect-study/blob/main/wiki/domains/d3-claude-code-config.md
-- Study guide: https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md
-- Format: one multiple-choice question at a time; one correct answer per question.
-- Feedback: correctness, correct answer, rationale, misconception/escalation, and optional deeper explanation.
-- Controls: pause/resume; answers are only written when submitted. A paused run can resume from the last completed question by consulting this file.
-- Scoring: first-attempt accuracy; retries are recorded separately and do not erase initial mistakes.
+## Quiz metadata
+- Primary source: [Claude Certified Architect Guide §6.3 Prompt Chaining](https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md#63-prompt-chaining)
+- Related study reference: [D3 Claude Code Configuration & Workflows](./d3-claude-code-config.md)
+- Wizard instructions: [PROMPT-CHAINING-QUIZ.md](./PROMPT-CHAINING-QUIZ.md)
+- Question bank: [prompt-chaining-quiz.json](./prompt-chaining-quiz.json)
+- Format: one question at a time; feedback after each response; pause/resume supported.
+- Scoring: first-attempt accuracy is tracked separately from retakes.
 
-## Current progress
-- Status: ready
-- Current attempt: none
-- Last completed question: none
-- Weaknesses identified: none
+## Current checkpoint
+- Active attempt: A1
+- Status: in progress
+- Last submitted question: none
+- Next question: 1 of 7
+- First-attempt score: 0/0
+- Weaknesses: not yet assessed
 
-## Attempt log
+## Attempt index
+- [A1 — Prompt Chaining](./attempts/prompt-chaining-A1.md): started; no answers submitted yet.
 
+## Answer log
+| Attempt | Question | Topic | Answer | Result | First-attempt? | Weakness / follow-up |
+|---|---:|---|---|---|---|---|
+
+## Training priorities
+Will be populated from incorrect answers and user requests for deeper explanation. Each weakness should record the concept, observed misconception, corrective explanation, and recommended practice.
