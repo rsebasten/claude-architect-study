@@ -1,0 +1,113 @@
+{
+  "title": "Prompt Chaining — Section 6.3",
+  "source": "https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md#63-prompt-chaining",
+  "relatedStudyPage": "https://github.com/rsebasten/claude-architect-study/blob/main/wiki/domains/d3-claude-code-config.md",
+  "attemptId": "A1",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Sequential focused passes",
+      "prompt": "You are reviewing a pull request with 14 changed files. You need consistent deep analysis of each file and must also detect defects that occur only where modules interact. Which workflow best applies prompt chaining?",
+      "choices": [
+        "Ask one broad prompt to review all 14 files and produce a single summary.",
+        "Run a focused local-issue analysis on each file, then run a separate integration pass across the files.",
+        "Review only the files with the most lines, then infer the rest.",
+        "Ask an open-ended investigation agent to decide whether a review is necessary."
+      ],
+      "answer": 1,
+      "why": "Prompt chaining decomposes a predictable multi-aspect review into sequential focused steps. Analyze each file for local issues, then perform a separate cross-file integration pass for module-boundary problems. This avoids attention dilution while preserving a deliberate check for interactions.",
+      "escalation": "Coaching escalation: if you chose one broad pass, the risk is attention dilution—some files receive shallow analysis or bugs are missed. Remediation: practice writing a two-stage review plan: per-file findings first, integration findings second.",
+      "follow": "Want a concrete example of the per-file prompt and integration prompt?"
+    },
+    {
+      "id": 2,
+      "topic": "Why chaining improves review quality",
+      "prompt": "A reviewer is given many files in one large prompt. It catches obvious issues in two files but gives shallow comments on the rest. What problem is prompt chaining primarily intended to reduce?",
+      "choices": [
+        "Attention dilution caused by too much material competing for model attention.",
+        "The inability to read more than one file in a single request.",
+        "The need to run code compilation after every prompt.",
+        "The loss of source-control history between requests."
+      ],
+      "answer": 0,
+      "why": "The guide calls out attention dilution: when too many files are presented at once, the model may miss bugs in some files and provide shallow commentary on others. Focused passes improve consistency, and a later integration pass handles cross-file dependencies.",
+      "escalation": "Coaching escalation: distinguish attention dilution from tool limitations or version-control issues. The mitigation is task decomposition into bounded passes—not assuming a single prompt will analyze every file equally deeply.",
+      "follow": "Would you like a deeper explanation of attention dilution and the integration pass?"
+    },
+    {
+      "id": 3,
+      "topic": "Prompt chaining vs dynamic decomposition",
+      "prompt": "A team performs the same structured code review for every release, using a known checklist and a predictable sequence of analysis steps. Which decomposition strategy is the best fit?",
+      "choices": [
+        "Dynamic decomposition, because every review must invent new subtasks.",
+        "Prompt chaining, because the task is predictable and repeatable.",
+        "No decomposition; put the entire checklist and all files into one prompt.",
+        "An interview pattern, because the sequence is already known."
+      ],
+      "answer": 1,
+      "why": "Prompt chaining is suited to predictable, repeatable tasks such as code reviews and file migrations. Dynamic decomposition is better when the subtasks become clear only as an open-ended investigation progresses.",
+      "escalation": "Coaching escalation: the decision criterion is whether the task structure is known up front. Known sequence → fixed chain. Unknown scope or emerging discoveries → dynamic decomposition.",
+      "follow": "Want a side-by-side decision guide with more examples?"
+    },
+    {
+      "id": 4,
+      "topic": "Dynamic adaptive decomposition",
+      "prompt": "You are asked to add tests to an unfamiliar legacy codebase. The initial scan reveals that one high-risk module has no tests and that it depends on an undocumented external API. The next useful actions depend on what has just been discovered. Which strategy is most appropriate?",
+      "choices": [
+        "A fixed prompt chain with an unchanging list of steps, regardless of discoveries.",
+        "Dynamic adaptive decomposition that updates the subtasks based on findings.",
+        "A single prompt asking Claude to write every test immediately.",
+        "A cross-file integration pass before mapping the codebase."
+      ],
+      "answer": 1,
+      "why": "This is open-ended investigation: map the structure, prioritize based on findings, then adapt the plan when new dependencies are discovered. Dynamic decomposition generates or changes subtasks as intermediate results arrive.",
+      "escalation": "Coaching escalation: do not confuse a known pipeline with an investigation whose scope is still emerging. Remediation: identify what is known at the start, what can only be learned during execution, and which next steps depend on that learning.",
+      "follow": "Want to walk through an adaptive investigation step by step?"
+    },
+    {
+      "id": 5,
+      "topic": "Fixed pipeline recognition",
+      "prompt": "A document-processing task always follows the same stages: identify document type, extract fields, validate the fields, enrich the record, and produce the final output. All stages are known before execution. Which pattern describes this workflow?",
+      "choices": [
+        "Dynamic decomposition, because there are several steps.",
+        "Fixed pipeline (prompt chaining), because each stage is defined in advance.",
+        "An interview pattern, because the model should ask about each field.",
+        "A single unstructured prompt, because validation is deterministic."
+      ],
+      "answer": 1,
+      "why": "A fixed pipeline defines the sequence in advance. Prompt chaining works well when all steps are known and the task structure is predictable. Dynamic adaptive decomposition is for cases where intermediate results determine which subtasks should be created next.",
+      "escalation": "Coaching escalation: look for the signal 'all steps are known up front'. That is the hallmark of a fixed pipeline rather than adaptive investigation.",
+      "follow": "Would a diagram of the fixed and adaptive workflows help?"
+    },
+    {
+      "id": 6,
+      "topic": "Integration-pass purpose",
+      "prompt": "After separate local reviews of `auth.ts`, `database.ts`, and `routes.ts`, what should the final integration pass focus on?",
+      "choices": [
+        "Repeat the same local style checks for each file.",
+        "Only summarize the number of lines changed.",
+        "Check cross-file relationships such as inconsistent types, module-boundary defects, and circular dependencies.",
+        "Discard per-file findings and ask for a fresh broad review."
+      ],
+      "answer": 2,
+      "why": "The integration pass is distinct from local per-file analysis. It examines relationships among files and catches cross-file issues such as inconsistent types and circular dependencies that may not be visible within one file considered alone.",
+      "escalation": "Coaching escalation: preserve the two levels of analysis. Local passes find defects inside each file; the integration pass reasons about relationships and boundaries across files.",
+      "follow": "Want examples of local issues versus cross-file integration defects?"
+    },
+    {
+      "id": 7,
+      "topic": "Choosing a strategy from task uncertainty",
+      "prompt": "You are investigating an unfamiliar production incident. You do not yet know which services are involved; findings from the first trace may reveal which logs, services, or owners to investigate next. What is the strongest decomposition choice?",
+      "choices": [
+        "Prompt chaining with a fixed list of service analyses decided before inspecting evidence.",
+        "Dynamic decomposition, because the next subtasks depend on discoveries.",
+        "A fixed three-step code-review chain, even if the investigation reveals unrelated systems.",
+        "Skip decomposition and ask for a final root cause immediately."
+      ],
+      "answer": 1,
+      "why": "The guide recommends dynamic decomposition for open-ended investigations where the full scope is unknown and the next tasks depend on what earlier steps reveal. A fixed prompt chain is preferable when steps are predictable and known beforehand.",
+      "escalation": "Coaching escalation: the key variable is uncertainty about the task structure. When discoveries change the investigation plan, adapt the subtasks instead of forcing a predetermined chain.",
+      "follow": "Would you like a scenario drill to practice choosing between the two strategies?"
+    }
+  ]
+}
