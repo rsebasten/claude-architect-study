@@ -4,9 +4,9 @@
 - Started: 2026-11-18
 - Status: in progress
 - Questions: 7
-- Submitted: 4
-- First-attempt score: 4/4
-- Checkpoint: Question 5
+- Submitted: 5
+- First-attempt score: 5/5
+- Checkpoint: Question 6
 
 ## Responses
 
@@ -42,6 +42,14 @@
 - Remediation / escalation: No remediation escalation required. Reinforce the decision boundary: predefined, repeatable stages favor prompt chaining; unknown scope and discovery-dependent next steps favor dynamic decomposition.
 - Weakness observed: None from this response.
 
+### Question 5 — Known sequential stages
+- Selected answer: **B** — Prompt chaining / a fixed pipeline, because all stages and their order are known in advance.
+- Result: **Correct**
+- First attempt: Yes
+- Explanation: A workflow with a known sequence of stages is a strong fit for prompt chaining. Each stage can be handled as a focused step, and the same ordered pipeline can be applied consistently to every document.
+- Remediation / escalation: No remediation escalation required. Reinforce the distinction between fixed, reproducible pipelines and adaptive decomposition for unknown or changing task scope.
+- Weakness observed: None from this response.
+
 ## Weaknesses
 
-No weaknesses identified from Q1–Q4. Update this section after each incorrect answer or request for deeper explanation.
+No weaknesses identified from Q1–Q5. Update this section after each incorrect answer or request for deeper explanation.
