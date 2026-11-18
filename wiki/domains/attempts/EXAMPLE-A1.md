@@ -14,6 +14,7 @@
 | 1 | `EXAMPLE-Q01` | 1 | 1961 | A | A | Correct |
 | 2 | `EXAMPLE-Q02` | 2 | 1976 | B | B | Correct |
 | 3 | `EXAMPLE-Q03` | 3 | 1991 | A | A | Correct |
+| 4 | `EXAMPLE-Q04` | 4 | 2006 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -32,6 +33,13 @@
 ### Question 3 — Feedback
 
 **Source explanation (Why A):** It directly addresses the root cause—unclear decision boundaries. B is unreliable (the model can be confidently wrong). C is overengineering. D solves a different problem (mood != complexity).
+
+- Answer submitted: A
+- Result: Correct
+
+### Question 4 — Feedback
+
+**Source explanation (Why A):** Project commands stored in `.claude/commands/` are version-controlled and automatically available to everyone. B is for personal commands. C is for instructions, not command definitions. D does not exist.
 
 - Answer submitted: A
 - Result: Correct
