@@ -2,11 +2,11 @@
 
 - Source: [Guide §6.3 Prompt Chaining](https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md#63-prompt-chaining)
 - Started: 2026-11-18
-- Status: in progress
+- Status: completed
 - Questions: 7
-- Submitted: 6
-- First-attempt score: 6/6
-- Checkpoint: Question 7
+- Submitted: 7
+- First-attempt score: 7/7 (100%)
+- Checkpoint: complete
 
 ## Responses
 
@@ -58,6 +58,20 @@
 - Remediation / escalation: No remediation escalation required. Reinforce the two-level review: local correctness per file, followed by system-level consistency across files.
 - Weakness observed: None from this response.
 
-## Weaknesses
+### Question 7 — Discovery-driven incident investigation
+- Selected answer: **B** — Dynamic decomposition, adapting the next investigative tasks as evidence emerges.
+- Result: **Correct**
+- First attempt: Yes
+- Explanation: An incident with incomplete evidence and an unknown set of affected services has no fully predictable investigation path. Dynamic decomposition adapts the next subtasks as findings reveal new dependencies or services to inspect.
+- Remediation / escalation: No remediation escalation required.
+- Weakness observed: None from this response.
 
-No weaknesses identified from Q1–Q6. Update this section after each incorrect answer or request for deeper explanation.
+## Final A1 assessment
+
+- Result: **7/7 correct (100%)** on first attempts.
+- Coverage demonstrated: sequential focused analysis; attention dilution; predictable repeatable workflows; fixed pipelines; dynamic adaptive decomposition; cross-file integration.
+- Strengths: reliably distinguishes known workflows from discovery-driven investigations and understands why local file review needs a separate integration pass.
+- Weaknesses: none observed in this attempt.
+- Recommended next step: progress to a harder scenario-based retake or adjacent topic, with emphasis on designing chain boundaries, intermediate outputs, and handoffs.
+
+
