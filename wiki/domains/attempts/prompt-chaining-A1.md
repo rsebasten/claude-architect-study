@@ -4,9 +4,9 @@
 - Started: 2026-11-18
 - Status: in progress
 - Questions: 7
-- Submitted: 2
-- First-attempt score: 2/2
-- Checkpoint: Question 3
+- Submitted: 3
+- First-attempt score: 3/3
+- Checkpoint: Question 4
 
 ## Responses
 
@@ -26,6 +26,14 @@
 - Remediation / escalation: No remediation escalation required. Retain the core rationale: narrow sequential passes reduce attention dilution and improve consistency.
 - Weakness observed: None from this response.
 
+### Question 3 — Predictable repeatable workflows
+- Selected answer: **B** — Prompt chaining, because the review is repeatable and its steps are known in advance.
+- Result: **Correct**
+- First attempt: Yes
+- Explanation: Prompt chaining is well suited to predictable tasks with a stable sequence of known steps, such as a release review that follows the same checklist each time. The workflow can be decomposed into focused stages and reproduced consistently.
+- Remediation / escalation: No remediation escalation required. Reinforce the selection rule: known, repeatable stages favor a predefined chain; open-ended work favors dynamic decomposition.
+- Weakness observed: None from this response.
+
 ## Weaknesses
 
-No weaknesses identified from Q1–Q2. Update this section after each incorrect answer or request for deeper explanation.
+No weaknesses identified from Q1–Q3. Update this section after each incorrect answer or request for deeper explanation.
