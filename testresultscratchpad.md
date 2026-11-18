@@ -13,13 +13,13 @@ Persistent record for Prompt Chaining quiz answers, attempts, and training weakn
 ## Current checkpoint
 - Active attempt: A1
 - Status: in progress
-- Last submitted question: 5 of 7
-- Next question: 6 of 7
-- First-attempt score: 5/5
-- Weaknesses: none identified from Q1–Q5
+- Last submitted question: 6 of 7
+- Next question: 7 of 7
+- First-attempt score: 6/6
+- Weaknesses: none identified from Q1–Q6
 
 ## Attempt index
-- [A1 — Prompt Chaining](./attempts/prompt-chaining-A1.md): in progress; Q1–Q5 correct.
+- [A1 — Prompt Chaining](./attempts/prompt-chaining-A1.md): in progress; Q1–Q6 correct.
 
 ## Answer log
 | Attempt | Question | Topic | Answer | Result | First-attempt? | Weakness / follow-up |
@@ -29,6 +29,7 @@ Persistent record for Prompt Chaining quiz answers, attempts, and training weakn
 | A1 | 3 | Predictable repeatable workflows | B | Correct | Yes | No weakness observed; select prompt chaining/fixed pipelines when steps are known in advance. |
 | A1 | 4 | Open-ended investigation | B | Correct | Yes | No weakness observed; adapt subtasks when intermediate discoveries determine the next step. |
 | A1 | 5 | Known sequential stages | B | Correct | Yes | No weakness observed; use a fixed chain when every stage and its order are known. |
+| A1 | 6 | Cross-file integration | C | Correct | Yes | No weakness observed; integration passes check relationships and dependencies across files. |
 
 ## Training priorities
-No weakness identified from Q1–Q5. Reinforce focused per-file analysis, attention management, integration passes, and choosing fixed chains for known workflows versus adaptive decomposition for open-ended investigations.
+No weakness identified from Q1–Q6. Reinforce focused per-file analysis, attention management, integration passes, and choosing fixed chains for known workflows versus adaptive decomposition for open-ended investigations.
