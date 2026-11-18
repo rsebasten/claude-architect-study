@@ -13,12 +13,12 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 - Attempt: [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md)
 - Status: In progress — Examples of Exam Questions with Explanations
 - Previous D3-A1: **VOID — generated questions were not copied from an authoritative question source; no answers were submitted.**
-- Completed source questions: 5/88
-- Next question: EXAMPLE-Q06 (original Source Question 6).
+- Completed source questions: 6/88
+- Next question: EXAMPLE-Q07 (original Source Question 7).
 
 ## Attempt index
 - [D3-A1](./wiki/domains/attempts/D3-A1.md): void; generated question set withdrawn.
-- [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md): in progress; 5 questions answered.
+- [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md): in progress; 6 questions answered.
 
 ## Answer log
 | Attempt | Source ID | Original source question | Source line | Selected answer | Result | First-attempt? | Notes |
