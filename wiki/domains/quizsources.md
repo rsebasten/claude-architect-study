@@ -20,10 +20,12 @@ This registry controls which source material may be used to create quizzes.
 - **Role:** Authoritative question source
 - **Canonical source:** [guide_en.md](https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md)
 - **Source URL:** https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md
-- **Verified question count:** 88 bold multiple-choice question prompts in the guide's question-bank portion (source lines 1965–3293, checked 2026-11-18).
-- **Question locator convention:** Use the question's order in the source question-bank portion (Source Q01–Q88) and preserve its exact line number in `guide_en.md`. If the guide later changes, re-count and re-verify before starting a new set.
+- **Verified question count:** 88 numbered question blocks: 12 in “Examples of Exam Questions with Explanations” and 76 in “Practice Test” (checked 2026-11-18).
+- **Question cache:** [claude-certified-architect-guide_en-questions.md](./claude-certified-architect-guide_en-questions.md) — verbatim local extraction; use this file for quizzes so the external source does not need to be fetched for every question.
+- **Question locator convention:** Use stable IDs `EXAMPLE-Q01`–`EXAMPLE-Q12` and `PRACTICE-Q01`–`PRACTICE-Q76`; preserve original question numbers and source line locators. Re-extract and verify the source revision before replacing this cache.
 - **Content rule:** Source prompt, options, correct answer, and explanation must be copied from the guide exactly. Do not create new questions or options.
 - **Progress status:** Not started
+- **Cached question count:** 88
 - **Completed questions:** 0/88
 - **Current attempt:** None
 
