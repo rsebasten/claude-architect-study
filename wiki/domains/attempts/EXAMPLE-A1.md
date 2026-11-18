@@ -18,6 +18,7 @@
 | 5 | `EXAMPLE-Q05` | 5 | 2021 | A | A | Correct |
 | 6 | `EXAMPLE-Q06` | 6 | 2036 | A | A | Correct |
 | 7 | `EXAMPLE-Q07` | 7 | 2051 | B | B | Correct |
+| 8 | `EXAMPLE-Q08` | 8 | 2066 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -66,4 +67,11 @@
 **Source explanation (Why B):** The logs show the coordinator decomposed “creative industries” only into visual subtopics, completely missing music, literature, and film. Subagents executed correctly—the issue is what they were assigned.
 
 - Answer submitted: B
+- Result: Correct
+
+### Question 8 — Feedback
+
+**Source explanation (Why A):** Structured error context gives the coordinator what it needs to decide whether to retry with a modified query, try an alternative approach, or continue with partial results. B hides context behind a generic status. C masks failure as success. D aborts the entire workflow unnecessarily.
+
+- Answer submitted: A
 - Result: Correct
