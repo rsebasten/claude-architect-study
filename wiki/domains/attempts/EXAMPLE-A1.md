@@ -16,6 +16,7 @@
 | 3 | `EXAMPLE-Q03` | 3 | 1991 | A | A | Correct |
 | 4 | `EXAMPLE-Q04` | 4 | 2006 | A | A | Correct |
 | 5 | `EXAMPLE-Q05` | 5 | 2021 | A | A | Correct |
+| 6 | `EXAMPLE-Q06` | 6 | 2036 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -48,6 +49,13 @@
 ### Question 5 — Feedback
 
 **Source explanation (Why A):** Planning mode is designed for large changes, multiple possible approaches, and architectural decisions. B risks expensive rework. C assumes you already know the structure. D is reactive.
+
+- Answer submitted: A
+- Result: Correct
+
+### Question 6 — Feedback
+
+**Source explanation (Why A):** `.claude/rules/` with glob patterns (e.g., `**/*.test.tsx`) enables automatic convention application based on file paths—ideal for tests spread across the codebase. B relies on model inference. C is manual/on-demand. D does not work well when relevant files are in many directories.
 
 - Answer submitted: A
 - Result: Correct
