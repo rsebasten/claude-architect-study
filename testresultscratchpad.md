@@ -10,14 +10,15 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 - Supporting notes: [D3 Claude Code Configuration & Workflows](./wiki/domains/d3-claude-code-config.md) — explanations only, not a question source.
 
 ## Current checkpoint
-- Attempt: None
-- Status: Ready to start a source-verbatim quiz
+- Attempt: [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md)
+- Status: In progress — Examples of Exam Questions with Explanations
 - Previous D3-A1: **VOID — generated questions were not copied from an authoritative question source; no answers were submitted.**
-- Completed source questions: 0/88
-- Next question: Source Q01, after selecting a quiz range.
+- Completed source questions: 1/88
+- Next question: EXAMPLE-Q02 (original Source Question 2).
 
 ## Attempt index
 - [D3-A1](./wiki/domains/attempts/D3-A1.md): void; generated question set withdrawn.
+- [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md): in progress; 1 question answered.
 
 ## Answer log
 | Attempt | Source ID | Original source question | Source line | Selected answer | Result | First-attempt? | Notes |
