@@ -15,6 +15,7 @@
 | 2 | `EXAMPLE-Q02` | 2 | 1976 | B | B | Correct |
 | 3 | `EXAMPLE-Q03` | 3 | 1991 | A | A | Correct |
 | 4 | `EXAMPLE-Q04` | 4 | 2006 | A | A | Correct |
+| 5 | `EXAMPLE-Q05` | 5 | 2021 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -40,6 +41,13 @@
 ### Question 4 — Feedback
 
 **Source explanation (Why A):** Project commands stored in `.claude/commands/` are version-controlled and automatically available to everyone. B is for personal commands. C is for instructions, not command definitions. D does not exist.
+
+- Answer submitted: A
+- Result: Correct
+
+### Question 5 — Feedback
+
+**Source explanation (Why A):** Planning mode is designed for large changes, multiple possible approaches, and architectural decisions. B risks expensive rework. C assumes you already know the structure. D is reactive.
 
 - Answer submitted: A
 - Result: Correct
