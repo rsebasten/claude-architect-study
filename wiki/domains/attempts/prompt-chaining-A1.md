@@ -4,9 +4,9 @@
 - Started: 2026-11-18
 - Status: in progress
 - Questions: 7
-- Submitted: 3
-- First-attempt score: 3/3
-- Checkpoint: Question 4
+- Submitted: 4
+- First-attempt score: 4/4
+- Checkpoint: Question 5
 
 ## Responses
 
@@ -34,6 +34,14 @@
 - Remediation / escalation: No remediation escalation required. Reinforce the selection rule: known, repeatable stages favor a predefined chain; open-ended work favors dynamic decomposition.
 - Weakness observed: None from this response.
 
+### Question 4 — Open-ended investigation
+- Selected answer: **B** — Dynamic adaptive decomposition, where subtasks evolve based on intermediate findings.
+- Result: **Correct**
+- First attempt: Yes
+- Explanation: In an unfamiliar codebase, the investigation path is not fully knowable in advance. Dynamic decomposition creates or adjusts subtasks as findings reveal new dependencies and questions. A fixed chain is better when the stages are predictable.
+- Remediation / escalation: No remediation escalation required. Reinforce the decision boundary: predefined, repeatable stages favor prompt chaining; unknown scope and discovery-dependent next steps favor dynamic decomposition.
+- Weakness observed: None from this response.
+
 ## Weaknesses
 
-No weaknesses identified from Q1–Q3. Update this section after each incorrect answer or request for deeper explanation.
+No weaknesses identified from Q1–Q4. Update this section after each incorrect answer or request for deeper explanation.
