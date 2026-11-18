@@ -13,17 +13,18 @@ Persistent record for Prompt Chaining quiz answers, attempts, and training weakn
 ## Current checkpoint
 - Active attempt: A1
 - Status: in progress
-- Last submitted question: none
-- Next question: 1 of 7
-- First-attempt score: 0/0
-- Weaknesses: not yet assessed
+- Last submitted question: 1 of 7
+- Next question: 2 of 7
+- First-attempt score: 1/1
+- Weaknesses: none identified from Q1
 
 ## Attempt index
-- [A1 — Prompt Chaining](./attempts/prompt-chaining-A1.md): started; no answers submitted yet.
+- [A1 — Prompt Chaining](./attempts/prompt-chaining-A1.md): in progress; Q1 correct.
 
 ## Answer log
 | Attempt | Question | Topic | Answer | Result | First-attempt? | Weakness / follow-up |
 |---|---:|---|---|---|---|---|
+| A1 | 1 | Sequential focused passes | B | Correct | Yes | No weakness observed; reinforce per-file analysis followed by integration pass. |
 
 ## Training priorities
-Will be populated from incorrect answers and user requests for deeper explanation. Each weakness should record the concept, observed misconception, corrective explanation, and recommended practice.
+No weakness identified from Q1. Reinforce the distinction between per-file local analysis and cross-file integration.
