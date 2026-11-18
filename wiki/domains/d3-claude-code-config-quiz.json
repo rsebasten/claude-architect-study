@@ -1,0 +1,127 @@
+{
+  "title": "D3 Claude Code Configuration & Workflows — Attempt D3-A1",
+  "sourceId": "SRC-D3-CONFIG",
+  "sourceUrl": "https://github.com/rsebasten/claude-architect-study/blob/main/wiki/domains/d3-claude-code-config.md",
+  "attemptId": "D3-A1",
+  "questions": [
+    {
+      "id": "D3-A1-Q01",
+      "n": 1,
+      "topic": "Shared versus personal instruction scope",
+      "source": "SRC-D3-CONFIG-3.1",
+      "task": "3.1",
+      "prompt": "A team adds required project coding standards to one developer’s `~/.claude/CLAUDE.md`. A new teammate clones the repository but does not receive those instructions. What is the best correction?",
+      "choices": [
+        "Keep the rules in the user-level file and ask each teammate to copy it manually.",
+        "Move the shared standards into the project-level `CLAUDE.md` or `.claude/CLAUDE.md`.",
+        "Move the standards into a subfolder `CLAUDE.md` unrelated to the files being edited.",
+        "Put the standards into `/memory`, which synchronizes them across the team."
+      ],
+      "answer": 1,
+      "why": "The D3 source distinguishes user-level instructions (`~/.claude/CLAUDE.md`, only for the individual and not in git) from project-level instructions (`CLAUDE.md` or `.claude/CLAUDE.md`) intended to be shared.",
+      "remedy": "Check the scope hierarchy: user instructions are personal; project instructions are version-controlled and shared."
+    },
+    {
+      "id": "D3-A1-Q02",
+      "n": 2,
+      "topic": "Commands versus skills",
+      "source": "SRC-D3-CONFIG-3.2",
+      "task": "3.2",
+      "prompt": "A team wants a reusable project skill whose verbose generation output should stay out of the main conversation context. Which configuration matches the D3 guide?",
+      "choices": [
+        "Create `.claude/commands/skill.md` and rely on it being loaded continuously.",
+        "Create `.claude/skills/<name>/SKILL.md` and use `context: fork` in its frontmatter.",
+        "Create `~/.claude/CLAUDE.md` and add `allowed-tools` to it.",
+        "Create a path-specific rule with a `paths:` glob; skills cannot isolate context."
+      ],
+      "answer": 1,
+      "why": "The D3 source places project skills in `.claude/skills/<name>/SKILL.md` and identifies `context: fork` as isolated subagent context that keeps verbose output out of the main session.",
+      "remedy": "Keep the artifact types distinct: project commands live under `.claude/commands/`; skills have their own directory and SKILL.md frontmatter."
+    },
+    {
+      "id": "D3-A1-Q03",
+      "n": 3,
+      "topic": "Path-specific rule targeting",
+      "source": "SRC-D3-CONFIG-3.3",
+      "task": "3.3",
+      "prompt": "A repository has test files spread across many directories. You want test conventions to load only when matching test files are edited. Which approach is the best fit?",
+      "choices": [
+        "Add one subfolder `CLAUDE.md` to each directory, regardless of file type.",
+        "Use `.claude/rules/*.md` with YAML `paths:` globs such as `**/*.test.tsx`.",
+        "Put the test conventions in the user-level `~/.claude/CLAUDE.md`.",
+        "Create a project slash command; commands load automatically for matching files."
+      ],
+      "answer": 1,
+      "why": "The D3 source describes path-specific rules in `.claude/rules/*.md` using YAML `paths:` globs. They load only when editing matching files, which is useful when relevant files are distributed across directories.",
+      "remedy": "Select path-scoped rules when the target files are spread across folders and matching should be conditional."
+    },
+    {
+      "id": "D3-A1-Q04",
+      "n": 4,
+      "topic": "Plan mode versus direct execution",
+      "source": "SRC-D3-CONFIG-3.4",
+      "task": "3.4",
+      "prompt": "A requested change spans a migration of 45+ files, with several valid architectural approaches. Which workflow best matches the D3 guidance?",
+      "choices": [
+        "Use direct execution immediately because the requested outcome is known.",
+        "Use plan mode to evaluate the scope and approach, then execute the agreed plan.",
+        "Use direct execution and avoid inspecting the affected files.",
+        "Use `/memory` to decide between architectural alternatives."
+      ],
+      "answer": 1,
+      "why": "The D3 source recommends plan mode for large or multi-file changes and tasks with several valid approaches or architecture decisions. It also describes combining planning with subsequent execution.",
+      "remedy": "Use scope and ambiguity as the decision criteria: broad, multi-file, or architectural work favors plan mode; simple, well-scoped fixes favor direct execution."
+    },
+    {
+      "id": "D3-A1-Q05",
+      "n": 5,
+      "topic": "Iterative refinement and example-driven prompting",
+      "source": "SRC-D3-CONFIG-3.5",
+      "task": "3.5",
+      "prompt": "Claude repeatedly generates outputs that do not match the team's expected format. Which refinement is specifically recommended in the D3 guide?",
+      "choices": [
+        "Add more vague prose such as “be more careful.”",
+        "Provide 2–3 concrete input/output examples that demonstrate the expected pattern.",
+        "Move all instructions into a personal user-level file.",
+        "Send every unrelated issue in one large message."
+      ],
+      "answer": 1,
+      "why": "The D3 source says 2–3 concrete input/output examples beat prose for iterative refinement. It also lists test-driven prompting and an interview pattern as additional techniques.",
+      "remedy": "Demonstrate the desired transformation with concrete examples instead of relying only on abstract prose."
+    },
+    {
+      "id": "D3-A1-Q06",
+      "n": 6,
+      "topic": "Non-interactive CI execution and structured results",
+      "source": "SRC-D3-CONFIG-3.6",
+      "task": "3.6",
+      "prompt": "A CI job hangs because Claude Code is waiting for interactive input. The team also needs machine-readable findings for inline pull-request comments. Which combination matches the D3 guidance?",
+      "choices": [
+        "Use `CLAUDE_HEADLESS=true` and parse narrative paragraphs.",
+        "Run with `-p` / `--print`, and use `--output-format json` with `--json-schema`.",
+        "Redirect stdin and rely on Markdown headings as a stable schema.",
+        "Use plan mode and ask Claude to print a CSV after the job ends."
+      ],
+      "answer": 1,
+      "why": "The D3 source identifies `-p` / `--print` as non-interactive execution and `--output-format json` plus `--json-schema` for structured machine-readable results.",
+      "remedy": "Separate the two requirements: non-interactive execution prevents CI from hanging; JSON plus a schema makes findings machine-readable."
+    },
+    {
+      "id": "D3-A1-Q07",
+      "n": 7,
+      "topic": "Independent review and re-review hygiene",
+      "source": "SRC-D3-CONFIG-3.6",
+      "task": "3.6",
+      "prompt": "A developer fixes issues found by an earlier automated review and pushes new commits. The team wants to avoid repeated comments on already-fixed issues while retaining review quality. What should the pipeline do?",
+      "choices": [
+        "Ask the same session that wrote the code to approve its own changes.",
+        "Run an independent review instance, include the prior review results, and report only new or unresolved findings.",
+        "Discard all prior results and ask for another broad review without context.",
+        "Skip the re-review and rely only on the developer’s commit message."
+      ],
+      "answer": 1,
+      "why": "The D3 source recommends an independent instance for review and says re-reviews should include prior review results and report only new or unresolved issues.",
+      "remedy": "Carry forward prior findings as comparison context, and keep the review independent from the code-writing session."
+    }
+  ]
+}
