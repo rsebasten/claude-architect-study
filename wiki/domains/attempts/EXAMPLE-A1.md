@@ -12,10 +12,18 @@
 | Attempt question | Stable source ID | Original source question | Source line | Selected answer | Correct answer | Result |
 |---:|---|---:|---:|---|---|---|
 | 1 | `EXAMPLE-Q01` | 1 | 1961 | A | A | Correct |
+| 2 | `EXAMPLE-Q02` | 2 | 1976 | B | B | Correct |
 
 ### Question 1 — Feedback
 
 **Source explanation (Why A):** When critical business logic requires a specific tool sequence, software provides **deterministic guarantees** that prompt-based approaches (B, C) cannot. D addresses availability, not tool ordering.
 
 - Answer submitted: A
+- Result: Correct
+
+### Question 2 — Feedback
+
+**Source explanation (Why B):** Tool descriptions are the model’s primary selection mechanism. This is the lowest-effort, highest-impact fix. A adds tokens without addressing the root cause. C is overengineering. D requires more effort than justified.
+
+- Answer submitted: B
 - Result: Correct
