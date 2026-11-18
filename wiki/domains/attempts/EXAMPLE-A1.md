@@ -22,6 +22,7 @@
 | 9 | `EXAMPLE-Q09` | 9 | 2081 | A | A | Correct |
 | 10 | `EXAMPLE-Q10` | 10 | 2096 | A | A | Correct |
 | 11 | `EXAMPLE-Q11` | 11 | 2111 | A | A | Correct |
+| 12 | `EXAMPLE-Q12` | 12 | 2126 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -96,6 +97,13 @@
 ### Question 11 — Feedback
 
 **Source explanation (Why A):** The Message Batches API saves 50%, but processing time can be up to 24 hours with no guaranteed latency SLA. That makes it unsuitable for blocking pre-merge checks where developers are waiting, but ideal for overnight batch workloads like tech-debt reports.
+
+- Answer submitted: A
+- Result: Correct
+
+### Question 12 — Feedback
+
+**Source explanation (Why A):** Focused passes directly address the root cause—attention dilution when processing many files at once. Per-file analysis ensures consistent depth, and a separate integration pass catches cross-file issues. B shifts burden to developers without improving the system. C is a misconception: larger context does not fix attention quality. D suppresses real bugs by requiring consensus across inconsistent detections.
 
 - Answer submitted: A
 - Result: Correct
