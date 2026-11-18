@@ -21,6 +21,7 @@
 | 8 | `EXAMPLE-Q08` | 8 | 2066 | A | A | Correct |
 | 9 | `EXAMPLE-Q09` | 9 | 2081 | A | A | Correct |
 | 10 | `EXAMPLE-Q10` | 10 | 2096 | A | A | Correct |
+| 11 | `EXAMPLE-Q11` | 11 | 2111 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -88,6 +89,13 @@
 ### Question 10 — Feedback
 
 **Source explanation (Why A):** `-p` (or `--print`) is the documented way to run Claude Code in non-interactive mode. It processes the prompt, prints to stdout, and exits. The other options are either non-existent features or Unix workarounds.
+
+- Answer submitted: A
+- Result: Correct
+
+### Question 11 — Feedback
+
+**Source explanation (Why A):** The Message Batches API saves 50%, but processing time can be up to 24 hours with no guaranteed latency SLA. That makes it unsuitable for blocking pre-merge checks where developers are waiting, but ideal for overnight batch workloads like tech-debt reports.
 
 - Answer submitted: A
 - Result: Correct
