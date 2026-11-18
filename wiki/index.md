@@ -12,7 +12,7 @@ Read this first. One line per page, grouped by domain. Maintained by Claude (see
 | [D4 Prompt engineering and structured output](domains/d4-prompt-structured-output.md) | 20% | Few-shot, explicit criteria, chaining, JSON schemas, validation and retry |
 | [D5 Context management and reliability](domains/d5-context-reliability.md) | 15% | Context passing, error propagation, provenance, escalation |
 
-Weights from [community §Exam Content] (unverified against exam-guide).
+Weights verified [exam-guide p.3] (matches community). Each domain page has a task-statement table, traps and links to my code.
 
 ## Concepts
 
