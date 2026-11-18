@@ -17,6 +17,7 @@
 | 4 | `EXAMPLE-Q04` | 4 | 2006 | A | A | Correct |
 | 5 | `EXAMPLE-Q05` | 5 | 2021 | A | A | Correct |
 | 6 | `EXAMPLE-Q06` | 6 | 2036 | A | A | Correct |
+| 7 | `EXAMPLE-Q07` | 7 | 2051 | B | B | Correct |
 
 ### Question 1 — Feedback
 
@@ -58,4 +59,11 @@
 **Source explanation (Why A):** `.claude/rules/` with glob patterns (e.g., `**/*.test.tsx`) enables automatic convention application based on file paths—ideal for tests spread across the codebase. B relies on model inference. C is manual/on-demand. D does not work well when relevant files are in many directories.
 
 - Answer submitted: A
+- Result: Correct
+
+### Question 7 — Feedback
+
+**Source explanation (Why B):** The logs show the coordinator decomposed “creative industries” only into visual subtopics, completely missing music, literature, and film. Subagents executed correctly—the issue is what they were assigned.
+
+- Answer submitted: B
 - Result: Correct
