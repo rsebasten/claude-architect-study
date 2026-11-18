@@ -1,42 +1,42 @@
 # Quiz Sources Registry
 
-This file is the authoritative registry for study-quiz source provenance in this repository.
+This registry controls which source material may be used to create quizzes.
 
-## Generation and provenance rules
+## Mandatory quiz rules
 
-1. Generate quiz questions only from sources listed in this registry and explicitly marked **Active**.
-2. Preserve each source's terminology, facts, boundaries, and distinctions. Do not silently supplement answers with general knowledge or other files.
-3. Every generated question must carry:
-   - a unique question ID within its attempt;
-   - a source ID from this registry;
-   - the exact source task/section number (or page/line locator when no numbered task exists);
-   - a link to the source.
-4. Every response record in `testresultscratchpad.md` and the corresponding attempt file must repeat the source ID, source task/section number, and source URL.
-5. If a concept cannot be mapped to a specific source locator, do not quiz it until the source registry is corrected.
-6. On completion of all questions in an attempt/source set, update that source's status below. Do not mark a source complete merely because one quiz set was completed if more registered content remains untested.
+1. **Do not invent, paraphrase, adapt, or write new questions or answer choices.**
+2. Present the source's question prompt and all answer choices verbatim, preserving wording and order.
+3. Use only questions that actually appear in a registered source. Never create distractors or rewrite choices.
+4. Preserve the source's supplied correct answer and explanation. If the source does not supply an answer key or explanation, say so; do not infer one silently.
+5. Every question record must include its stable source ID, original question number (or source line locator if the source has no printed number), section, and URL.
+6. Every answer in `testresultscratchpad.md` and the corresponding attempt file must record the source ID and original source question number/locator.
+7. Study notes may be used to explain a source question only when clearly labeled as supporting notes; they are not a source of quiz questions.
+8. If exact source wording or answer choices cannot be verified, stop and ask rather than generate replacements.
 
-## Registered sources
+## Registered quiz sources
+
+### SRC-CCA-GUIDE — Claude Certified Architect Guide (English)
+- **Status:** Active
+- **Role:** Authoritative question source
+- **Canonical source:** [guide_en.md](https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md)
+- **Source URL:** https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md
+- **Verified question count:** 88 bold multiple-choice question prompts in the guide's question-bank portion (source lines 1965–3293, checked 2026-11-18).
+- **Question locator convention:** Use the question's order in the source question-bank portion (Source Q01–Q88) and preserve its exact line number in `guide_en.md`. If the guide later changes, re-count and re-verify before starting a new set.
+- **Content rule:** Source prompt, options, correct answer, and explanation must be copied from the guide exactly. Do not create new questions or options.
+- **Progress status:** Not started
+- **Completed questions:** 0/88
+- **Current attempt:** None
 
 ### SRC-D3-CONFIG — D3 Claude Code Configuration & Workflows
-- **Status:** Active — quiz set in progress
-- **Canonical source:** [D3 Claude Code Configuration & Workflows](./d3-claude-code-config.md)
+- **Status:** Supporting reference only — not eligible as a quiz-question source
+- **Canonical source:** [d3-claude-code-config.md](./d3-claude-code-config.md)
 - **Source URL:** https://github.com/rsebasten/claude-architect-study/blob/main/wiki/domains/d3-claude-code-config.md
-- **Scope:** Task statements 3.1–3.6 and the associated key facts and common traps in the D3 reference.
-- **Source locators:**
-  - **SRC-D3-CONFIG-3.1** — CLAUDE.md hierarchy, imports, modular rules, and memory inspection.
-  - **SRC-D3-CONFIG-3.2** — Slash command and skill locations, frontmatter, context isolation, and usage distinction.
-  - **SRC-D3-CONFIG-3.3** — Path-specific rules, YAML path globs, conditional loading, and when to use them.
-  - **SRC-D3-CONFIG-3.4** — Plan mode versus direct execution; Explore subagent.
-  - **SRC-D3-CONFIG-3.5** — Iterative refinement, examples, test-driven prompting, interview pattern, and batching related issues.
-  - **SRC-D3-CONFIG-3.6** — CI/CD non-interactive execution, structured output, independent review, re-review, and avoiding duplicate tests.
-- **Quiz coverage status:** In progress
-- **Completed attempts:** None
-- **Current attempt:** D3-A1
-- **Completion rule:** Mark the source status **Completed** only after all questions in D3-A1 have been answered and the attempt and scratchpad records have been committed. If later D3 coverage is planned, record it as a new attempt and update status accordingly.
+- **Role:** Supporting study notes only. It may help explain concepts after a source question, but must never be used to author or replace a question or answer choice.
+- **Question-generation status:** Disabled
 
-## Naming convention
+## Attempt and question ID conventions
 
-- Source IDs are stable and must never be reused for a different source.
-- Task locator IDs are formed as `<SOURCE-ID>-<task-number>`.
-- Attempt IDs use a domain prefix and sequence, e.g. `D3-A1`.
-- Question IDs use the attempt plus a sequence, e.g. `D3-A1-Q01`.
+- Source IDs are stable and must never be reused.
+- Attempt IDs use a source prefix and sequence, e.g. `CCA-A1`.
+- Each question record uses the source's original ordinal and locator, e.g. `SRC-CCA-GUIDE / Source Q01 / guide_en.md line 1965`.
+- Local attempt sequence numbers must never be represented as original source question numbers.
