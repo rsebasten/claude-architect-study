@@ -13,13 +13,13 @@ Persistent record for Prompt Chaining quiz answers, attempts, and training weakn
 ## Current checkpoint
 - Active attempt: A1
 - Status: in progress
-- Last submitted question: 3 of 7
-- Next question: 4 of 7
-- First-attempt score: 3/3
-- Weaknesses: none identified from Q1–Q3
+- Last submitted question: 4 of 7
+- Next question: 5 of 7
+- First-attempt score: 4/4
+- Weaknesses: none identified from Q1–Q4
 
 ## Attempt index
-- [A1 — Prompt Chaining](./attempts/prompt-chaining-A1.md): in progress; Q1–Q3 correct.
+- [A1 — Prompt Chaining](./attempts/prompt-chaining-A1.md): in progress; Q1–Q4 correct.
 
 ## Answer log
 | Attempt | Question | Topic | Answer | Result | First-attempt? | Weakness / follow-up |
@@ -27,6 +27,7 @@ Persistent record for Prompt Chaining quiz answers, attempts, and training weakn
 | A1 | 1 | Sequential focused passes | B | Correct | Yes | No weakness observed; reinforce per-file analysis followed by integration pass. |
 | A1 | 2 | Attention dilution | A | Correct | Yes | No weakness observed; recognize that large prompts can dilute attention across files. |
 | A1 | 3 | Predictable repeatable workflows | B | Correct | Yes | No weakness observed; select prompt chaining/fixed pipelines when steps are known in advance. |
+| A1 | 4 | Open-ended investigation | B | Correct | Yes | No weakness observed; adapt subtasks when intermediate discoveries determine the next step. |
 
 ## Training priorities
-No weakness identified from Q1–Q3. Reinforce focused per-file analysis, attention management, integration passes, and the fit between prompt chaining and predictable repeatable workflows.
+No weakness identified from Q1–Q4. Reinforce focused per-file analysis, attention management, integration passes, and choosing fixed chains for known workflows versus adaptive decomposition for open-ended investigations.
