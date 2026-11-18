@@ -13,10 +13,10 @@ Persistent record for Prompt Chaining quiz answers, attempts, and training weakn
 ## Current checkpoint
 - Active attempt: A1
 - Status: in progress
-- Last submitted question: 1 of 7
-- Next question: 2 of 7
-- First-attempt score: 1/1
-- Weaknesses: none identified from Q1
+- Last submitted question: 2 of 7
+- Next question: 3 of 7
+- First-attempt score: 2/2
+- Weaknesses: none identified from Q1–Q2
 
 ## Attempt index
 - [A1 — Prompt Chaining](./attempts/prompt-chaining-A1.md): in progress; Q1 correct.
@@ -25,6 +25,7 @@ Persistent record for Prompt Chaining quiz answers, attempts, and training weakn
 | Attempt | Question | Topic | Answer | Result | First-attempt? | Weakness / follow-up |
 |---|---:|---|---|---|---|---|
 | A1 | 1 | Sequential focused passes | B | Correct | Yes | No weakness observed; reinforce per-file analysis followed by integration pass. |
+| A1 | 2 | Attention dilution | A | Correct | Yes | No weakness observed; recognize that large prompts can dilute attention across files. |
 
 ## Training priorities
-No weakness identified from Q1. Reinforce the distinction between per-file local analysis and cross-file integration.
+No weakness identified from Q1–Q2. Reinforce focused per-file analysis, attention management, and a separate cross-file integration pass.
