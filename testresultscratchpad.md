@@ -1,26 +1,24 @@
 # testresultscratchpad
 
-Persistent answer and performance record across quiz attempts. **Every answer must retain source provenance.**
+Persistent quiz answer and performance record. **Only verbatim questions and answer choices from registered authoritative sources are permitted.**
 
-## Active quiz metadata
-- Active attempt: [D3-A1](./wiki/domains/attempts/D3-A1.md)
+## Quiz policy
+- No generated, paraphrased, adapted, or newly authored questions or answer choices.
+- Active authoritative source: [Claude Certified Architect Guide](https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md)
+- Source ID: `SRC-CCA-GUIDE`
 - Source registry: [quizsources.md](./wiki/domains/quizsources.md)
-- Active source ID: `SRC-D3-CONFIG`
-- Source: [D3 Claude Code Configuration & Workflows](./wiki/domains/d3-claude-code-config.md)
-- Source URL: https://github.com/rsebasten/claude-architect-study/blob/main/wiki/domains/d3-claude-code-config.md
-- Source status: In progress
-- Format: one question at a time; evaluate and record each answer before presenting the next question.
+- Supporting notes: [D3 Claude Code Configuration & Workflows](./wiki/domains/d3-claude-code-config.md) — explanations only, not a question source.
 
 ## Current checkpoint
-- Attempt: D3-A1
-- Status: in progress
-- Answered: 0/7
-- Next question: D3-A1-Q01 (source task 3.1)
-- Score: pending
+- Attempt: None
+- Status: Ready to start a source-verbatim quiz
+- Previous D3-A1: **VOID — generated questions were not copied from an authoritative question source; no answers were submitted.**
+- Completed source questions: 0/88
+- Next question: Source Q01, after selecting a quiz range.
 
 ## Attempt index
-- [D3-A1 — Claude Code Configuration & Workflows](./wiki/domains/attempts/D3-A1.md): in progress; 0/7 answered.
+- [D3-A1](./wiki/domains/attempts/D3-A1.md): void; generated question set withdrawn.
 
 ## Answer log
-| Attempt | Question ID | Source ID | Source task | Topic | Answer | Result | First-attempt? | Weakness / remediation |
-|---|---|---|---:|---|---|---|---|---|
+| Attempt | Source ID | Original source question | Source line | Selected answer | Result | First-attempt? | Notes |
+|---|---|---|---:|---|---|---|---|
