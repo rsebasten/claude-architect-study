@@ -1,7 +1,5 @@
 # testresultscratchpad
-
 Persistent quiz answer and performance record. **Only verbatim questions and answer choices from registered authoritative sources are permitted.**
-
 ## Quiz policy
 - No generated, paraphrased, adapted, or newly authored questions or answer choices.
 - Active authoritative source: [Claude Certified Architect Guide](https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.md)
@@ -13,14 +11,28 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 - Attempt: [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md)
 - Status: In progress — Practice Test
 - Previous D3-A1: **VOID — generated questions were not copied from an authoritative question source; no answers were submitted.**
-- Completed source questions: 13/88
-- Next question: PRACTICE-Q02 (original Practice Test Question 2).
+- Completed source questions: 14/88
+- Next question: PRACTICE-Q03 (original Practice Test Question 3).
 
 ## Attempt index
 - [D3-A1](./wiki/domains/attempts/D3-A1.md): void; generated question set withdrawn.
 - [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md): completed; 12 questions answered.
-- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 1 question answered.
+- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 2 questions answered.
 
 ## Answer log
 | Attempt | Source ID | Original source question | Source line | Selected answer | Result | First-attempt? | Notes |
-|---|---|---|---:|---|---|---|---|
+|---|---|---:|---:|---|---|---|
+| EXAMPLE-A1 | `EXAMPLE-Q01` | 1 | 1961 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q02` | 2 | 1976 | B | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q03` | 3 | 1991 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q04` | 4 | 2006 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q05` | 5 | 2021 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q06` | 6 | 2036 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q07` | 7 | 2051 | B | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q08` | 8 | 2066 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q09` | 9 | 2081 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q10` | 10 | 2096 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q11` | 11 | 2111 | A | Correct | |
+| EXAMPLE-A1 | `EXAMPLE-Q12` | 12 | 2126 | A | Correct | |
+| PRACTICE-A1 | `PRACTICE-Q01` | 1 | 2151 | D | Correct | |
+| PRACTICE-A1 | `PRACTICE-Q02` | 2 | 2166 | C | Correct | |
