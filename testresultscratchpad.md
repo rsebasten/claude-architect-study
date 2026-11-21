@@ -11,13 +11,13 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 - Attempt: [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md)
 - Status: In progress — Practice Test
 - Previous D3-A1: **VOID — generated questions were not copied from an authoritative question source; no answers were submitted.**
-- Completed source questions: 21/88
-- Next question: PRACTICE-Q10 (original Practice Test Question 10).
+- Completed source questions: 22/88
+- Next question: PRACTICE-Q11 (original Practice Test Question 11).
 
 ## Attempt index
 - [D3-A1](./wiki/domains/attempts/D3-A1.md): void; generated question set withdrawn.
 - [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md): completed; 12 questions answered.
-- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 9 questions answered (7 correct, 2 incorrect).
+- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 10 questions answered (7 correct, 3 incorrect).
 
 ## Answer log
 | Attempt | Source ID | Original source question | Source line | Selected answer | Result | First-attempt? | Notes |
