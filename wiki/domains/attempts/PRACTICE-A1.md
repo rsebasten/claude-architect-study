@@ -20,6 +20,7 @@
 | 7 | `PRACTICE-Q07` | 7 | 2241 | B | B | Correct |
 | 8 | `PRACTICE-Q08` | 8 | 2256 | D | A | Incorrect |
 | 9 | `PRACTICE-Q09` | 9 | 2271 | A | A | Correct |
+| 10 | `PRACTICE-Q10` | 10 | 2286 | D | A | Incorrect |
 
 ### Question 1 — Feedback
 
@@ -85,3 +86,11 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 10 — Feedback
+
+**Source explanation (Why A):** Replacing a general-purpose tool with a document-specific tool that validates URLs against document formats fixes the root cause by constraining capability at the interface level. This follows the principle of least privilege, making undesired search behavior impossible rather than merely discouraged.
+
+- Answer submitted: D
+- Correct answer: A
+- Result: Incorrect
