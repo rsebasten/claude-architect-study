@@ -15,6 +15,7 @@
 | 2 | `PRACTICE-Q02` | 2 | 2166 | C | C | Correct |
 | 3 | `PRACTICE-Q03` | 3 | 2181 | D | D | Correct |
 | 4 | `PRACTICE-Q04` | 4 | 2196 | C | C | Correct |
+| 5 | `PRACTICE-Q05` | 5 | 2211 | D | D | Correct |
 
 ### Question 1 — Feedback
 
@@ -42,4 +43,11 @@
 **Source explanation (Why C):** The coordinator decomposed a broad topic only into visual-art subtasks, missing music, literature, and film entirely. Since subagents executed their assignments correctly, the narrow decomposition is the obvious root cause.
 
 - Answer submitted: C
+- Result: Correct
+
+### Question 5 — Feedback
+
+**Source explanation (Why D):** Coverage annotations implement graceful degradation with transparency, preserving value from completed work while propagating uncertainty to enable informed decisions about confidence.
+
+- Answer submitted: D
 - Result: Correct
