@@ -17,6 +17,7 @@
 | 4 | `PRACTICE-Q04` | 4 | 2196 | C | C | Correct |
 | 5 | `PRACTICE-Q05` | 5 | 2211 | D | D | Correct |
 | 6 | `PRACTICE-Q06` | 6 | 2226 | B | A | Incorrect |
+| 7 | `PRACTICE-Q07` | 7 | 2241 | B | B | Correct |
 
 ### Question 1 — Feedback
 
@@ -60,3 +61,10 @@
 - Answer submitted: B
 - Correct answer: A
 - Result: Incorrect
+
+### Question 7 — Feedback
+
+**Source explanation (Why B):** Renaming the web-search tool to `extract_web_results` and updating its description to explicitly reference web search and URLs directly removes the root cause by eliminating semantic overlap between the two tool names and descriptions. This makes each tool’s purpose unambiguous, enabling the coordinator to reliably distinguish document analysis from web search.
+
+- Answer submitted: B
+- Result: Correct
