@@ -18,6 +18,7 @@
 | 5 | `PRACTICE-Q05` | 5 | 2211 | D | D | Correct |
 | 6 | `PRACTICE-Q06` | 6 | 2226 | B | A | Incorrect |
 | 7 | `PRACTICE-Q07` | 7 | 2241 | B | B | Correct |
+| 8 | `PRACTICE-Q08` | 8 | 2256 | D | A | Incorrect |
 
 ### Question 1 — Feedback
 
@@ -68,3 +69,11 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 8 — Feedback
+
+**Source explanation (Why A):** The coordinator pattern provides centralized visibility into all interactions, uniform error handling across the system, and fine-grained control over what information each subagent receives—these are the primary advantages of a star-shaped communication topology.
+
+- Answer submitted: D
+- Correct answer: A
+- Result: Incorrect
