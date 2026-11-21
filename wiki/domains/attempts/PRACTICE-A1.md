@@ -19,3 +19,12 @@
 
 - Answer submitted: D
 - Result: Correct
+
+| 2 | `PRACTICE-Q02` | 2 | 2166 | C | C | Correct |
+
+### Question 2 — Feedback
+
+**Source explanation (Why C):** In a coordinator–subagent architecture, the coordinator forwards both result sets to the synthesis agent for centralized integration, preserving control and ensuring high-quality merging.
+
+- Answer submitted: C
+- Result: Correct
