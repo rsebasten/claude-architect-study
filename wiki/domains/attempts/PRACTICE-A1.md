@@ -16,6 +16,7 @@
 | 3 | `PRACTICE-Q03` | 3 | 2181 | D | D | Correct |
 | 4 | `PRACTICE-Q04` | 4 | 2196 | C | C | Correct |
 | 5 | `PRACTICE-Q05` | 5 | 2211 | D | D | Correct |
+| 6 | `PRACTICE-Q06` | 6 | 2226 | B | A | Incorrect |
 
 ### Question 1 — Feedback
 
@@ -51,3 +52,11 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 6 — Feedback
+
+**Source explanation (Why A):** Returning an error with context to the coordinator is the most effective approach because it lets the coordinator make an informed decision—skip the file, try an alternative parsing method, or notify the user—while maintaining visibility into the failure.
+
+- Answer submitted: B
+- Correct answer: A
+- Result: Incorrect
