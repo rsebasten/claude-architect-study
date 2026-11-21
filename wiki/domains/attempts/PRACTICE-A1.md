@@ -19,6 +19,7 @@
 | 6 | `PRACTICE-Q06` | 6 | 2226 | B | A | Incorrect |
 | 7 | `PRACTICE-Q07` | 7 | 2241 | B | B | Correct |
 | 8 | `PRACTICE-Q08` | 8 | 2256 | D | A | Incorrect |
+| 9 | `PRACTICE-Q09` | 9 | 2271 | A | A | Correct |
 
 ### Question 1 — Feedback
 
@@ -77,3 +78,10 @@
 - Answer submitted: D
 - Correct answer: A
 - Result: Incorrect
+
+### Question 9 — Feedback
+
+**Source explanation (Why A):** Returning structured error context—including failure type, executed query, partial results, and alternative approaches—gives the coordinator everything needed to make intelligent recovery decisions (e.g., retry with a modified query or continue with partial results). It preserves maximum context for informed coordination-level decision-making.
+
+- Answer submitted: A
+- Result: Correct
