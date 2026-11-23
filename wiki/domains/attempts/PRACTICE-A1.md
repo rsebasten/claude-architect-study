@@ -21,6 +21,7 @@
 | 8 | `PRACTICE-Q08` | 8 | 2256 | D | A | Incorrect |
 | 9 | `PRACTICE-Q09` | 9 | 2271 | A | A | Correct |
 | 10 | `PRACTICE-Q10` | 10 | 2286 | D | A | Incorrect |
+| 11 | `PRACTICE-Q11` | 11 | 2301 | D | B | Incorrect |
 
 ### Question 1 — Feedback
 
@@ -86,6 +87,14 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 11 — Feedback
+
+**Source explanation (Why B):** Having the coordinator explicitly partition the research space before delegating is most effective because it addresses the root cause—unclear task boundaries—before any work begins. It preserves parallelism while preventing duplicated effort and wasted tokens.
+
+- Answer submitted: D
+- Correct answer: B
+- Result: Incorrect
 
 ### Question 10 — Feedback
 
