@@ -22,6 +22,7 @@
 | 9 | `PRACTICE-Q09` | 9 | 2271 | A | A | Correct |
 | 10 | `PRACTICE-Q10` | 10 | 2286 | D | A | Incorrect |
 | 11 | `PRACTICE-Q11` | 11 | 2301 | D | B | Incorrect |
+| 12 | `PRACTICE-Q12` | 12 | 2316 | C | D | Incorrect |
 
 ### Question 1 — Feedback
 
@@ -102,4 +103,12 @@
 
 - Answer submitted: D
 - Correct answer: A
+- Result: Incorrect
+
+### Question 12 — Feedback
+
+**Source explanation (Why D):** A timeout (access failure) and “0 results” (valid empty result) are semantically different outcomes requiring different responses. Distinguishing them allows the coordinator to retry the patent database while accepting the industry reports “0 results” as a valid, informative finding.
+
+- Answer submitted: C
+- Correct answer: D
 - Result: Incorrect
