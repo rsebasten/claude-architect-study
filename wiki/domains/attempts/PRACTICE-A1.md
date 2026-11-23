@@ -23,6 +23,7 @@
 | 10 | `PRACTICE-Q10` | 10 | 2286 | D | A | Incorrect |
 | 11 | `PRACTICE-Q11` | 11 | 2301 | D | B | Incorrect |
 | 12 | `PRACTICE-Q12` | 12 | 2316 | C | D | Incorrect |
+| 13 | `PRACTICE-Q13` | 13 | 2331 | C | C | Correct |
 
 ### Question 1 — Feedback
 
@@ -112,3 +113,10 @@
 - Answer submitted: C
 - Correct answer: D
 - Result: Incorrect
+
+### Question 13 — Feedback
+
+**Source explanation (Why C):** Putting a key-findings summary at the start leverages primacy effects so critical information sits in the most reliably processed position. Adding explicit section headings throughout helps the model navigate and attend to mid-input content, directly mitigating the “lost in the middle” phenomenon.
+
+- Answer submitted: C
+- Result: Correct
