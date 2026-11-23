@@ -11,13 +11,13 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 - Attempt: [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md)
 - Status: In progress — Practice Test
 - Previous D3-A1: **VOID — generated questions were not copied from an authoritative question source; no answers were submitted.**
-- Completed source questions: 23/88
-- Next question: PRACTICE-Q12 (original Practice Test Question 12).
+- Completed source questions: 24/88
+- Next question: PRACTICE-Q13 (original Practice Test Question 13).
 
 ## Attempt index
 - [D3-A1](./wiki/domains/attempts/D3-A1.md): void; generated question set withdrawn.
 - [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md): completed; 12 questions answered.
-- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 11 questions answered (7 correct, 4 incorrect).
+- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 12 questions answered (7 correct, 5 incorrect).
 
 ## Answer log
 | Attempt | Source ID | Original source question | Source line | Selected answer | Result | First-attempt? | Notes |
@@ -39,3 +39,10 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 | PRACTICE-A1 | `PRACTICE-Q03` | 3 | 2181 | D | Correct | |
 | PRACTICE-A1 | `PRACTICE-Q04` | 4 | 2196 | C | Correct | |
 | PRACTICE-A1 | `PRACTICE-Q05` | 5 | 2211 | D | Correct | |
+| PRACTICE-A1 | `PRACTICE-Q06` | 6 | 2226 | B | Incorrect | |
+| PRACTICE-A1 | `PRACTICE-Q07` | 7 | 2241 | B | Correct | |
+| PRACTICE-A1 | `PRACTICE-Q08` | 8 | 2256 | D | Incorrect | |
+| PRACTICE-A1 | `PRACTICE-Q09` | 9 | 2271 | A | Correct | |
+| PRACTICE-A1 | `PRACTICE-Q10` | 10 | 2286 | D | Incorrect | |
+| PRACTICE-A1 | `PRACTICE-Q11` | 11 | 2301 | D | Incorrect | |
+| PRACTICE-A1 | `PRACTICE-Q12` | 12 | 2316 | C | Incorrect | |
