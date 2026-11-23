@@ -25,6 +25,7 @@
 | 12 | `PRACTICE-Q12` | 12 | 2316 | C | D | Incorrect |
 | 13 | `PRACTICE-Q13` | 13 | 2331 | C | C | Correct |
 | 14 | `PRACTICE-Q14` | 14 | 2346 | A | A | Correct |
+| 15 | `PRACTICE-Q15` | 15 | 2361 | B | D | Incorrect |
 
 ### Question 1 — Feedback
 
@@ -128,3 +129,11 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 15 — Feedback
+
+**Source explanation (Why D):** A limited-scope fact-verification tool lets the synthesis agent handle 85% of simple checks directly, eliminating most loops, while preserving the coordinator delegation path for the 15% of complex verifications. This applies least privilege while significantly reducing latency.
+
+- Answer submitted: B
+- Correct answer: D
+- Result: Incorrect
