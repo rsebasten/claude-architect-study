@@ -11,13 +11,13 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 - Attempt: [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md)
 - Status: In progress — Practice Test
 - Previous D3-A1: **VOID — generated questions were not copied from an authoritative question source; no answers were submitted.**
-- Completed source questions: 25/88
-- Next question: PRACTICE-Q14 (original Practice Test Question 14).
+- Completed source questions: 26/88
+- Next question: PRACTICE-Q15 (original Practice Test Question 15).
 
 ## Attempt index
 - [D3-A1](./wiki/domains/attempts/D3-A1.md): void; generated question set withdrawn.
 - [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md): completed; 12 questions answered.
-- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 13 questions answered (8 correct, 5 incorrect).
+- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 14 questions answered (9 correct, 5 incorrect).
 
 ## Answer log
 | Attempt | Source ID | Original source question | Source line | Selected answer | Result | First-attempt? | Notes |
@@ -47,3 +47,4 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 | PRACTICE-A1 | `PRACTICE-Q11` | 11 | 2301 | D | Incorrect | |
 | PRACTICE-A1 | `PRACTICE-Q12` | 12 | 2316 | C | Incorrect | |
 | PRACTICE-A1 | `PRACTICE-Q13` | 13 | 2331 | C | Correct | |
+| PRACTICE-A1 | `PRACTICE-Q14` | 14 | 2346 | A | Correct | |
