@@ -144,3 +144,10 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 17 — Feedback
+
+**Source explanation (Why A):** A second independent Claude Code instance without access to the generator’s reasoning directly addresses the root cause by avoiding confirmation bias. This “fresh eyes” perspective mirrors human peer review, where another reviewer catches issues the author rationalized.
+
+- Answer submitted: A
+- Result: Correct
