@@ -151,3 +151,11 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 18 — Feedback
+
+**Source explanation (Why B):** A “fire-and-forget” asynchronous Batch API model has no mechanism to intercept a tool call during a request, execute the tool, and return results for Claude to continue analysis. This is fundamentally incompatible with iterative tool-calling workflows that require multiple tool request/response rounds within a single logical interaction.
+
+- Answer submitted: D
+- Correct answer: B
+- Result: Incorrect
