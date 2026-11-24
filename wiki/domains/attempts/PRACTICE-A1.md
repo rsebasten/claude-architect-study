@@ -159,3 +159,10 @@
 - Answer submitted: D
 - Correct answer: B
 - Result: Incorrect
+
+### Question 19 — Feedback
+
+**Source explanation (Why B):** PR style checks block developers and require immediate responses via synchronous calls, while weekly security audits and nightly test generation are scheduled tasks with flexible deadlines that can tolerate up to a 24-hour batch window—capturing 50% savings for both.
+
+- Answer submitted: B
+- Result: Correct
