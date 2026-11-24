@@ -137,3 +137,10 @@
 - Answer submitted: B
 - Correct answer: D
 - Result: Incorrect
+
+### Question 16 — Feedback
+
+**Source explanation (Why B):** Using `--output-format json` with `--json-schema` enforces structured output at the CLI level, guaranteeing well-formed JSON with the required fields (file path, line number, severity, suggested fix) that can be reliably parsed and posted as inline PR comments via the GitHub API. It leverages built-in CLI capabilities designed specifically for structured output.
+
+- Answer submitted: B
+- Result: Correct
