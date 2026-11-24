@@ -166,3 +166,10 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 20 — Feedback
+
+**Source explanation (Why D):** Few-shot examples are the most effective technique for achieving consistent output format when instructions alone produce variable results. Providing 3–4 examples that show the exact desired structure (issue, location, concrete fix) gives the model a concrete pattern to follow, which is more reliable than abstract instructions.
+
+- Answer submitted: D
+- Result: Correct
