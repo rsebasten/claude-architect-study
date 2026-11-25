@@ -202,3 +202,10 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 25 — Feedback
+
+**Source explanation (Why D):** Including prior review findings in context lets Claude distinguish new problems from those already addressed in recent commits. This preserves review thoroughness while using Claude’s reasoning to avoid redundant feedback on fixed code.
+
+- Answer submitted: D
+- Result: Correct
