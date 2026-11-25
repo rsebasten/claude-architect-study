@@ -195,3 +195,10 @@
 - Answer submitted: B
 - Correct answer: A
 - Result: Incorrect
+
+### Question 24 — Feedback
+
+**Source explanation (Why A):** Including the existing test file fixes the root cause of duplication: Claude can only avoid suggesting already-covered scenarios if it knows what tests already exist. This gives Claude the information needed to propose genuinely new, valuable tests.
+
+- Answer submitted: A
+- Result: Correct
