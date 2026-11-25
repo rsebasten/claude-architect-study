@@ -173,3 +173,10 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 21 — Feedback
+
+**Source explanation (Why B):** Deep analysis is an ideal candidate for batch processing because it already runs overnight, tolerates delay, and uses a polling model before publishing results—matching the asynchronous, polling-based architecture of the Message Batches API while capturing 50% savings.
+
+- Answer submitted: B
+- Result: Correct
