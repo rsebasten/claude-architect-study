@@ -187,3 +187,11 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 23 — Feedback
+
+**Source explanation (Why A):** Temporarily disabling high-false-positive categories immediately stops trust erosion by removing noisy findings that cause developers to dismiss everything, while preserving value from high-precision categories like security and correctness. It also creates space to improve prompts for problematic categories before re-enabling them.
+
+- Answer submitted: B
+- Correct answer: A
+- Result: Incorrect
