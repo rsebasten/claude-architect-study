@@ -180,3 +180,10 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 22 — Feedback
+
+**Source explanation (Why D):** Explicit criteria—flagging comments only when claimed behavior contradicts actual code behavior—directly addresses the root cause by replacing a vague instruction with a precise definition of what constitutes a problem. This reduces false positives on acceptable patterns and misses of truly misleading comments.
+
+- Answer submitted: D
+- Result: Correct
