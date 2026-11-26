@@ -223,3 +223,11 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 28 — Feedback
+
+**Source explanation (Why A):** Including rationale and confidence directly in each finding reduces investigation time by letting developers quickly triage without opening each finding. It satisfies the “no filtering” constraint because all findings remain visible while accelerating developer decision-making.
+
+- Answer submitted: C
+- Correct answer: A
+- Result: Incorrect
