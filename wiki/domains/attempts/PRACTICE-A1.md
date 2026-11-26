@@ -216,3 +216,10 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 27 — Feedback
+
+**Source explanation (Why B):** Focused per-file passes address the root cause—attention dilution—by ensuring consistent depth and reliable local issue detection. A separate integration-oriented pass then covers cross-file concerns such as dependency and data-flow interactions.
+
+- Answer submitted: B
+- Result: Correct
