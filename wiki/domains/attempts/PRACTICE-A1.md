@@ -239,3 +239,10 @@
 - Answer submitted: C
 - Correct answer: A
 - Result: Incorrect
+
+### Question 30 — Feedback
+
+**Source explanation (Why C):** Message Batches API processing can take up to 24 hours with no latency SLA, which is acceptable for overnight technical debt reports but unacceptable for blocking pre-merge checks where developers wait. This matches each workflow to the right API based on latency requirements.
+
+- Answer submitted: C
+- Result: Correct
