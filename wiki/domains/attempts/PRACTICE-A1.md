@@ -209,3 +209,10 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 26 — Feedback
+
+**Source explanation (Why B):** The `-p` (or `--print`) flag is the documented way to run Claude Code non-interactively. It processes the prompt, prints the result to stdout, and exits without waiting for user input—ideal for CI/CD pipelines.
+
+- Answer submitted: B
+- Result: Correct
