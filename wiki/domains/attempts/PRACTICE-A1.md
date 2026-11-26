@@ -246,3 +246,11 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 31 — Feedback
+
+**Source explanation (Why B):** Concrete input-output examples remove ambiguity inherent in prose descriptions by showing Claude the exact expected transformation results. This directly addresses the root cause—misinterpretation of textual requirements—by providing unambiguous patterns for field nesting and timestamp formatting.
+
+- Answer submitted: A
+- Correct answer: B
+- Result: Incorrect
