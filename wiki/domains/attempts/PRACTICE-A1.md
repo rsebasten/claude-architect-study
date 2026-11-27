@@ -424,3 +424,10 @@
 - Answer submitted: D
 - Result: Incorrect
 - Correct answer: C
+
+### Question 55 — Feedback
+
+**Source explanation (Why B):** Asking the user for an additional identifier is the most reliable way to resolve ambiguity because the user has definitive knowledge of their identity. One extra conversational turn is a small price to pay to eliminate a 15% error rate caused by choosing the wrong account.
+
+- Answer submitted: B
+- Result: Correct
