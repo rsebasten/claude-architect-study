@@ -547,3 +547,11 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 72 — Feedback
+
+**Source explanation (Why A):** Prefilling the assistant's response with the beginning of a direct answer prevents greeting patterns at the generation level—the model continues from the prefill rather than generating new opening phrases. System prompt instructions (D) can help but are less reliable since the model may still produce variants. Post-processing (C) is a fragile workaround. Temperature (B) controls randomness, not specific phrase patterns.
+
+- Answer submitted: D
+- Result: Incorrect
+- Correct answer: A
