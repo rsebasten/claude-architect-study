@@ -438,3 +438,10 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 57 — Feedback
+
+**Source explanation (Why D):** Expanding tool descriptions with input formats, example queries, edge cases, and clear boundaries directly fixes the root cause—minimal descriptions that don’t give the LLM enough information to distinguish similar tools. It’s a low-effort, high-impact first step that improves the primary mechanism the LLM uses for tool selection.
+
+- Answer submitted: D
+- Result: Correct
