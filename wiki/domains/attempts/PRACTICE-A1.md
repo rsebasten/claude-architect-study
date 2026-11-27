@@ -298,3 +298,11 @@
 - Answer submitted: B
 - Correct answer: A
 - Result: Incorrect
+
+### Question 38 — Feedback
+
+**Source explanation (Why D):** A skill invoked on demand loads the example context only when generating new endpoints, not during unrelated tasks like debugging or review. This keeps the main context clean while preserving high-quality generation when needed.
+
+- Answer submitted: A
+- Correct answer: D
+- Result: Incorrect
