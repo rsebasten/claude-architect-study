@@ -328,3 +328,10 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 42 — Feedback
+
+**Source explanation (Why B):** Claude Code supports a `.claude/rules/` directory where you can create separate Markdown files for topical guidance (e.g., `testing.md`, `api-conventions.md`), allowing teams to organize large instruction sets into focused, maintainable modules.
+
+- Answer submitted: B
+- Result: Correct
