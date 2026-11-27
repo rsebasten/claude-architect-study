@@ -482,3 +482,10 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 63 — Feedback
+
+**Source explanation (Why A):** When user preferences directly contradict each other, surfacing the conflict and asking for clarification is the only way to guarantee the recommendation aligns with the user's true intent. Any other approach involves making an assumption that may be wrong—maximizing returns and low risk tolerance are fundamentally incompatible goals that require a human decision.
+
+- Answer submitted: A
+- Result: Correct
