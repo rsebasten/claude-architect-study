@@ -115,3 +115,5 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 | PRACTICE-A1 | `PRACTICE-Q72` | 72 | 3229 | D | Incorrect | A |
 
 | PRACTICE-A1 | `PRACTICE-Q73` | 73 | 3244 | D | Correct | |
+
+| PRACTICE-A1 | `PRACTICE-Q74` | 74 | 3259 | D | Incorrect | C |
