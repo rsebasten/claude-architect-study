@@ -510,3 +510,10 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 67 — Feedback
+
+**Source explanation (Why A):** Claude's API is fully stateless—every request must include the complete conversation history in the `messages` array. As conversations grow, each request carries more tokens, which directly increases both processing latency and cost. The model does not maintain any internal state between calls (D is false), and response length is not inherently tied to conversation length (B).
+
+- Answer submitted: A
+- Result: Correct
