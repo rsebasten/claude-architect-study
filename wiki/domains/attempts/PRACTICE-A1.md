@@ -261,3 +261,11 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 33 — Feedback
+
+**Source explanation (Why D):** CLAUDE.md content loads in every session, ensuring coding standards and testing conventions always apply, while Skills are invoked on demand when Claude detects trigger keywords—ideal for workflow-specific guidance like PR review, deployment, and migrations.
+
+- Answer submitted: B
+- Correct answer: D
+- Result: Incorrect
