@@ -290,3 +290,11 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 37 — Feedback
+
+**Source explanation (Why A):** If the guidance was added only to the original developers’ user-level configs and not to the project-level `.claude/CLAUDE.md`, new team members won’t receive it. Moving it to the project-level configuration ensures all current and future team members automatically get the guidance.
+
+- Answer submitted: B
+- Correct answer: A
+- Result: Incorrect
