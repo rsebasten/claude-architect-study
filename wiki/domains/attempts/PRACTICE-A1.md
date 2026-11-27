@@ -408,3 +408,11 @@
 - Answer submitted: D
 - Result: Incorrect
 - Correct answer: A
+
+### Question 53 — Feedback
+
+**Source explanation (Why D):** Prompting Claude to bundle related tool requests into a single turn leverages its native ability to request multiple tools at once. It directly fixes the sequential-call pattern with minimal architectural change.
+
+- Answer submitted: C
+- Result: Incorrect
+- Correct answer: D
