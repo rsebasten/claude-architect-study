@@ -254,3 +254,10 @@
 - Answer submitted: A
 - Correct answer: B
 - Result: Incorrect
+
+### Question 32 — Feedback
+
+**Source explanation (Why B):** Slack integration has multiple valid approaches with significantly different architectural implications, and requirements are ambiguous. Planning mode lets you evaluate trade-offs among webhooks, bot tokens, and Slack Apps and align on an approach before implementation.
+
+- Answer submitted: B
+- Result: Correct
