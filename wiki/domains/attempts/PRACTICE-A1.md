@@ -349,3 +349,10 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 45 — Feedback
+
+**Source explanation (Why A):** An Explore subagent isolates the verbose discovery output in a separate context and returns only a concise summary to the main conversation. This preserves the main context window for the collaborative design and consistent implementation phases where retained context is most valuable.
+
+- Answer submitted: A
+- Result: Correct
