@@ -276,3 +276,10 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 35 — Feedback
+
+**Source explanation (Why A):** `context: fork` runs the analysis in an isolated subagent context so the large output does not pollute the main session’s context window and Claude does not lose track of the original task. It preserves full analysis capability while keeping the main session responsive.
+
+- Answer submitted: A
+- Result: Correct
