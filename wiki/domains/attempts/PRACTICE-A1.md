@@ -452,3 +452,11 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 59 — Feedback
+
+**Source explanation (Why A):** A PostToolUse hook provides a centralized, deterministic point to intercept and normalize all tool outputs—including third-party MCP server data—before the agent processes them. It’s more maintainable because transformations live in code and apply uniformly, rather than relying on LLM interpretation.
+
+- Answer submitted: C
+- Result: Incorrect
+- Correct answer: A
