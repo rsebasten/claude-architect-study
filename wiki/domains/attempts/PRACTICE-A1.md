@@ -555,3 +555,10 @@
 - Answer submitted: D
 - Result: Incorrect
 - Correct answer: A
+
+### Question 73 — Feedback
+
+**Source explanation (Why D):** Prefixing the status update to the next user message injects real-time context at a natural conversation boundary without disrupting the flow. Modifying the system prompt (A) requires rebuilding the session or is architecturally cumbersome. A synthetic user message (B) can break the natural dialogue flow and confuse attribution. Forcing a tool call each turn (C) is wasteful when events are rare.
+
+- Answer submitted: D
+- Result: Correct
