@@ -540,3 +540,10 @@
 - Answer submitted: C
 - Result: Incorrect
 - Correct answer: B
+
+### Question 71 — Feedback
+
+**Source explanation (Why B):** The system prompt is specifically designed for persistent behavioral constraints and guidelines that apply throughout the entire conversation. Prepending to each user message (A) is redundant overhead. The first assistant message (C) is unreliable because the model can deviate from its own prior statements. Environment variables (D) have no effect on model behavior.
+
+- Answer submitted: B
+- Result: Correct
