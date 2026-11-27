@@ -475,3 +475,10 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 62 — Feedback
+
+**Source explanation (Why C):** Handling retries at the tool level for transient errors is the correct abstraction boundary—the tool has definitive knowledge of the error type and can implement deterministic retry logic without relying on the agent to interpret a flag (D) or follow prompt-level instructions (A). Uniform backoff (B) wastes time on syntax errors that will never succeed.
+
+- Answer submitted: C
+- Result: Correct
