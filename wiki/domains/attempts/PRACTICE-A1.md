@@ -314,3 +314,10 @@
 - Answer submitted: C
 - Correct answer: B
 - Result: Incorrect
+
+### Question 40 — Feedback
+
+**Source explanation (Why D):** `.claude/rules/` files with YAML frontmatter and glob patterns (e.g., `**/*.test.tsx`, `src/api/**/*.ts`) enable deterministic, path-based convention application regardless of directory structure. This is the most supported approach for cross-cutting patterns like distributed test files.
+
+- Answer submitted: D
+- Result: Correct
