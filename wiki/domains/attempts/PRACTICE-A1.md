@@ -335,3 +335,10 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 43 — Feedback
+
+**Source explanation (Why B):** `context: fork` runs the skill in an isolated subagent context so exploration discussions do not pollute the main conversation history. This prevents rejected approaches and brainstorming context from influencing subsequent implementation work.
+
+- Answer submitted: B
+- Result: Correct
