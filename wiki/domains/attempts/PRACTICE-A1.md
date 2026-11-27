@@ -496,3 +496,10 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 65 — Feedback
+
+**Source explanation (Why C):** The hybrid approach preserves the highest-value information at the lowest cost. Critical facts like allergies and recipe quantities are extracted into a compact structured block (preventing the precision loss that occurs during summarization), general discussion is summarized, and recent exchanges are kept verbatim for conversational coherence. Options A and B risk losing critical dietary information; D is architectural overkill for a single cooking session.
+
+- Answer submitted: C
+- Result: Correct
