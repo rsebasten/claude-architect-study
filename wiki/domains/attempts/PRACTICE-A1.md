@@ -562,3 +562,11 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 74 — Feedback
+
+**Source explanation (Why C):** Stating assumptions explicitly and proceeding gives the user an immediate, useful response while preserving their ability to correct wrong assumptions. Hidden defaults (A) leave the user unaware of what was assumed. A compound question list (B) still demands upfront effort from the user. A structured form (D) adds more friction, not less—contradicting the goal of reducing abandonment.
+
+- Answer submitted: D
+- Result: Incorrect
+- Correct answer: C
