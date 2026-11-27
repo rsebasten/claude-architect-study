@@ -517,3 +517,11 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 68 — Feedback
+
+**Source explanation (Why C):** Semantic search over conversation history is the only approach that scales to three months of discussion while being able to surface specific relevant exchanges on demand. Rolling window (A) would discard most of the history. Progressive summarization (B) compresses discussions into abstractions that lose the specific conclusions users are asking about. XML tags (D) require restructuring all past content and don't solve the retrieval problem at this scale.
+
+- Answer submitted: B
+- Result: Incorrect
+- Correct answer: C
