@@ -342,3 +342,10 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 44 — Feedback
+
+**Source explanation (Why C):** A project `.mcp.json` with environment variable substitution is idiomatic: it provides a single version-controlled source of truth for MCP configuration while letting each developer supply credentials via environment variables. Documenting the variable makes onboarding easy without committing secrets.
+
+- Answer submitted: C
+- Result: Correct
