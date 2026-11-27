@@ -468,3 +468,10 @@
 - Answer submitted: A
 - Result: Incorrect
 - Correct answer: C
+
+### Question 61 — Feedback
+
+**Source explanation (Why D):** The two-tool token-binding approach makes it architecturally impossible to execute without a prior preview—the execute tool literally requires a token that only the preview tool can generate. This is the only approach that enforces the constraint at the code level rather than relying on LLM compliance with instructions (C), timing heuristics (A), or orchestration infrastructure (B).
+
+- Answer submitted: D
+- Result: Correct
