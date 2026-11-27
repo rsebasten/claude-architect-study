@@ -86,3 +86,4 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 | PRACTICE-A1 | `PRACTICE-Q49` | 49 | 2883 | C | Correct | |
 | PRACTICE-A1 | `PRACTICE-Q50` | 50 | 2899 | B | Incorrect | C |
 | PRACTICE-A1 | `PRACTICE-Q51` | 51 | 2914 | C | Correct |  |
+| PRACTICE-A1 | `PRACTICE-Q52` | 52 | 2929 | D | Incorrect | A |
