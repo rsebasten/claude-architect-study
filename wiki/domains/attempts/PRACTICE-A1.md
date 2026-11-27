@@ -385,3 +385,11 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 50 — Feedback
+
+**Source explanation (Why C):** This is a genuine policy gap: company rules cover price drops on your own site but do not address competitor price matching. The agent must not invent policy and should escalate for human judgment on how to interpret or extend existing rules.
+
+- Answer submitted: B
+- Result: Incorrect
+- Correct answer: C
