@@ -400,3 +400,11 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 52 — Feedback
+
+**Source explanation (Why A):** A self-critique stage (the evaluator-optimizer pattern) directly addresses inconsistent explanation completeness by forcing the agent to assess its own draft against concrete criteria—such as policy context, timelines, and next steps—before presenting it. This catches case-specific gaps without human oversight.
+
+- Answer submitted: D
+- Result: Incorrect
+- Correct answer: A
