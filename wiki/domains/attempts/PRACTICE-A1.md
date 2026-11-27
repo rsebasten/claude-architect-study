@@ -378,3 +378,10 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 49 — Feedback
+
+**Source explanation (Why C):** Explicit escalation criteria with few-shot examples directly address the root cause—unclear decision boundaries between simple and complex cases. It’s the most proportional, effective first intervention that teaches the agent when to escalate and when to resolve autonomously without extra infrastructure.
+
+- Answer submitted: C
+- Result: Correct
