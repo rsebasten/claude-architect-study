@@ -525,3 +525,10 @@
 - Answer submitted: B
 - Result: Incorrect
 - Correct answer: C
+
+### Question 69 — Feedback
+
+**Source explanation (Why C):** Periodic injection of behavioral reminders directly combats instruction drift by re-establishing constraints at regular intervals as conversation history accumulates. Moving guidelines to the first user message (A) reduces their authority. Starting a new conversation (B) destroys context. Post-response validation (D) is corrective rather than preventive and adds significant latency.
+
+- Answer submitted: C
+- Result: Correct
