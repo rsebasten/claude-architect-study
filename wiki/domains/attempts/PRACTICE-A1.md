@@ -269,3 +269,10 @@
 - Answer submitted: B
 - Correct answer: D
 - Result: Incorrect
+
+### Question 34 — Feedback
+
+**Source explanation (Why A):** Planning mode is the right strategy for complex architectural restructuring like splitting a monolith: it allows safe exploration and informed decisions about boundaries before committing to potentially expensive changes across many files.
+
+- Answer submitted: A
+- Result: Correct
