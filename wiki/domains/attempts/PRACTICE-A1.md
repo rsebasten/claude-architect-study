@@ -356,3 +356,10 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 46 — Feedback
+
+**Source explanation (Why D):** Tool descriptions are the primary input the model uses to decide which tool to call. When an agent consistently picks the wrong tool, the first diagnostic step is to verify that tool descriptions clearly separate each tool’s purpose and usage boundaries.
+
+- Answer submitted: D
+- Result: Correct
