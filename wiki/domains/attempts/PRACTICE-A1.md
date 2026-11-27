@@ -321,3 +321,10 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 41 — Feedback
+
+**Source explanation (Why B):** Putting custom slash commands under `.claude/commands/` inside the project repository ensures they are version-controlled and automatically available to every developer who clones or updates the repo. This is the intended location for project-level custom commands in Claude Code.
+
+- Answer submitted: B
+- Result: Correct
