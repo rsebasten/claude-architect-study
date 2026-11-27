@@ -503,3 +503,10 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 66 — Feedback
+
+**Source explanation (Why A):** The hybrid approach addresses both dimensions of the problem: retaining exact recent context (critical for conversational coherence) while maintaining a compressed representation of earlier preferences (preventing total loss when pairs are dropped). Increasing the window (C) simply delays the same problem. Vector search (B) may miss important context that isn't semantically similar to the current query. Full per-turn summarization (D) adds overhead and accumulates summarization errors.
+
+- Answer submitted: A
+- Result: Correct
