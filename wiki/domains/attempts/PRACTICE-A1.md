@@ -393,3 +393,10 @@
 - Answer submitted: B
 - Result: Incorrect
 - Correct answer: C
+
+### Question 51 — Feedback
+
+**Source explanation (Why C):** A programmatic precondition provides a deterministic guarantee that required sequencing is followed. It’s the most effective approach because it eliminates the possibility of skipping verification, regardless of LLM behavior.
+
+- Answer submitted: C
+- Result: Correct
