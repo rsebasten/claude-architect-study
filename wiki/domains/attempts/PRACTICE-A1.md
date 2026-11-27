@@ -577,3 +577,10 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 76 — Feedback
+
+**Source explanation (Why A):** Proceeding with reasonable stated assumptions eliminates the back-and-forth entirely while keeping the user informed and in control. Predefined silent interpretations (C) leave users confused when the response doesn't match their intent. A single-question limit (D) still requires turns of back-and-forth. A smaller classification model (B) adds latency and infrastructure complexity without solving the core UX problem.
+
+- Answer submitted: A
+- Result: Correct
