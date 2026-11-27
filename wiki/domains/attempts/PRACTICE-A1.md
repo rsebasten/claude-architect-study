@@ -306,3 +306,11 @@
 - Answer submitted: A
 - Correct answer: D
 - Result: Incorrect
+
+### Question 39 — Feedback
+
+**Source explanation (Why B):** This uses three separate configuration features to address each problem: `argument-hint` improves argument entry and reduces missing arguments, `context: fork` prevents context leakage from prior conversations, and `allowed-tools` constrains the skill to safe file-writing operations, preventing destructive actions.
+
+- Answer submitted: C
+- Correct answer: B
+- Result: Incorrect
