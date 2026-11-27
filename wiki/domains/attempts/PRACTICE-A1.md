@@ -363,3 +363,11 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 47 — Feedback
+
+**Source explanation (Why C):** Few-shot examples that demonstrate correct reasoning and tool sequencing for multi-issue requests are most effective because the agent already performs well on single issues—what it needs is guidance on the pattern for decomposing and routing multiple issues and keeping parameters separated.
+
+- Answer submitted: A
+- Result: Incorrect
+- Correct answer: C
