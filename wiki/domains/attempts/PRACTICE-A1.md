@@ -489,3 +489,10 @@
 
 - Answer submitted: A
 - Result: Correct
+
+### Question 64 — Feedback
+
+**Source explanation (Why D):** Claude has no server-side memory—every API call is stateless. Without including the full conversation history in the `messages` array of each request, Claude has no knowledge of prior turns. Vector databases (A) and `session_id` (C) are not part of Claude's architecture; context window overflow (B) is impossible for two-message exchanges.
+
+- Answer submitted: D
+- Result: Correct
