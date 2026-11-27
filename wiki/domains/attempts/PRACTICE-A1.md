@@ -445,3 +445,10 @@
 
 - Answer submitted: D
 - Result: Correct
+
+### Question 58 — Feedback
+
+**Source explanation (Why A):** `stop_reason` is Claude’s explicit structured signal for loop control: `tool_use` indicates Claude wants to run a tool and receive results back, while `end_turn` indicates Claude has completed its response and the loop should end.
+
+- Answer submitted: A
+- Result: Correct
