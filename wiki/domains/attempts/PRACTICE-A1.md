@@ -532,3 +532,11 @@
 
 - Answer submitted: C
 - Result: Correct
+
+### Question 70 — Feedback
+
+**Source explanation (Why B):** A 2,800-token system prompt with declarative rules is vulnerable to drift because abstract rules require the model to reason about them on every turn. Replacing verbose rules with concrete few-shot examples that demonstrate correct proficiency-level adaptation gives the model clear behavioral patterns to match—this is more reliably followed across many turns than abstract instructions. Reminder injection (A) helps but addresses symptoms; end-placement (C) helps initially but not with turn-level drift; regeneration (D) is expensive and corrective.
+
+- Answer submitted: C
+- Result: Incorrect
+- Correct answer: B
