@@ -11,13 +11,13 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 - Attempt: [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md)
 - Status: In progress — Practice Test
 - Previous D3-A1: **VOID — generated questions were not copied from an authoritative question source; no answers were submitted.**
-- Completed source questions: 56/88
-- Next question: PRACTICE-Q45 (original Practice Test Question 45).
+- Completed source questions: 57/88
+- Next question: PRACTICE-Q46 (original Practice Test Question 46).
 
 ## Attempt index
 - [D3-A1](./wiki/domains/attempts/D3-A1.md): void; generated question set withdrawn.
 - [EXAMPLE-A1](./wiki/domains/attempts/EXAMPLE-A1.md): completed; 12 questions answered.
-- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 44 questions answered (29 correct, 15 incorrect).
+- [PRACTICE-A1](./wiki/domains/attempts/PRACTICE-A1.md): in progress; 45 questions answered (30 correct, 15 incorrect).
 
 ## Answer log
 | Attempt | Source ID | Original source question | Source line | Selected answer | Result | First-attempt? | Notes |
@@ -79,3 +79,4 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 | PRACTICE-A1 | `PRACTICE-Q42` | 42 | 2774 | B | Correct | |
 | PRACTICE-A1 | `PRACTICE-Q43` | 43 | 2789 | B | Correct | |
 | PRACTICE-A1 | `PRACTICE-Q44` | 44 | 2804 | C | Correct | |
+| PRACTICE-A1 | `PRACTICE-Q45` | 45 | 2819 | A | Correct | |
