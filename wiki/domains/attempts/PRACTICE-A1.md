@@ -570,3 +570,10 @@
 - Answer submitted: D
 - Result: Incorrect
 - Correct answer: C
+
+### Question 75 — Feedback
+
+**Source explanation (Why C):** As assistant responses accumulate in the conversation history, the proportion of text reflecting the system prompt's behavioral constraints decreases relative to the growing body of assistant-generated content. The model increasingly pattern-matches to its own prior outputs rather than the system prompt, compounding drift even at short token lengths. The system prompt is included in every API call (D is false as a standalone explanation), and model attention degradation (B) doesn't operate at 2,500 tokens.
+
+- Answer submitted: C
+- Result: Correct
