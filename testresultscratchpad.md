@@ -103,3 +103,5 @@ Persistent quiz answer and performance record. **Only verbatim questions and ans
 | PRACTICE-A1 | `PRACTICE-Q66` | 66 | 3139 | A | Correct |  |
 
 | PRACTICE-A1 | `PRACTICE-Q67` | 67 | 3154 | A | Correct | |
+
+| PRACTICE-A1 | `PRACTICE-Q68` | 68 | 3169 | B | Incorrect | C |
