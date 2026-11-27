@@ -431,3 +431,10 @@
 
 - Answer submitted: B
 - Result: Correct
+
+### Question 56 — Feedback
+
+**Source explanation (Why A):** The systematic keyword-driven pattern (78% vs 93%) strongly indicates explicit routing logic in the system prompt reacting to the word “account” and steering the agent toward customer-related tools. Since tool descriptions are already clear, the discrepancy points to prompt-level instructions creating unintended behavioral steering.
+
+- Answer submitted: A
+- Result: Correct
