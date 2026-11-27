@@ -371,3 +371,10 @@
 - Answer submitted: A
 - Result: Incorrect
 - Correct answer: C
+
+### Question 48 — Feedback
+
+**Source explanation (Why C):** Decomposing into separate issues and investigating in parallel with shared customer context fixes both key problems: it eliminates redundant data retrieval by reusing shared context across issues and reduces total tool-call loops by parallelizing investigation before synthesizing a single resolution.
+
+- Answer submitted: C
+- Result: Correct
