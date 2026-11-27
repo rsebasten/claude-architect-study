@@ -416,3 +416,11 @@
 - Answer submitted: C
 - Result: Incorrect
 - Correct answer: D
+
+### Question 54 — Feedback
+
+**Source explanation (Why C):** Summarization inherently loses precise details. Extracting transactional facts into a structured “case facts” block outside the summarized history preserves critical information so it’s reliably available in every prompt regardless of how many turns have been summarized.
+
+- Answer submitted: D
+- Result: Incorrect
+- Correct answer: C
