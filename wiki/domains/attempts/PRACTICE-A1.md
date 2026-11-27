@@ -460,3 +460,11 @@
 - Answer submitted: C
 - Result: Incorrect
 - Correct answer: A
+
+### Question 60 — Feedback
+
+**Source explanation (Why C):** Targeting few-shot examples at the specific ambiguous scenarios where errors occur, with explicit rationale for why one tool is preferable to alternatives, teaches the model the comparative decision process needed for edge cases. This is more effective than generic examples or declarative rules.
+
+- Answer submitted: A
+- Result: Incorrect
+- Correct answer: C
